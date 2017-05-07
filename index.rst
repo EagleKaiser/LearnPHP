@@ -6,10 +6,18 @@
 Welcome to LearnPHP's documentation!
 ====================================
 
+
+
+
+
+
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+    Introduction
 
 
 Indices and tables
