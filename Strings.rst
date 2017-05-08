@@ -156,3 +156,25 @@ String Replace
     //To be or not to be, that is the question.
     //number of replaces= 2
     ?>
+
+Sub Strings
+~~~~~~~~~~~
+
+.. code-block:: php
+
+    <?php
+    $quote = "Only those who will risk going too far can possibly find out how far one can go.";
+    echo substr($quote, 3)."<br>";
+    echo substr($quote, -5)."<br>";
+    echo substr($quote, 3, 5)."<br>";
+    echo substr($quote, 3, -5)."<br>";
+    //output:
+    //y those who will risk going too far can possibly find out how far one can go.
+    //n go.
+    //y tho
+    //y those who will risk going too far can possibly find out how far one ca
+    ?>
+
+.. note:: 
+
+    3 is the third character from the beginnig while -5 is the fifth character from the end

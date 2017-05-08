@@ -101,6 +101,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#string-length">String length</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#string-position">String position</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#string-replace">String Replace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sub-strings">Sub Strings</a></li>
 </ul>
 </li>
 </ul>
@@ -321,6 +322,27 @@
 <span class="c1">//number of replaces= 2</span>
 <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="sub-strings">
+<h3>Sub Strings<a class="headerlink" href="#sub-strings" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$quote</span> <span class="o">=</span> <span class="s2">&quot;Only those who will risk going too far can possibly find out how far one can go.&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$quote</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$quote</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$quote</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$quote</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="c1">//output:</span>
+<span class="c1">//y those who will risk going too far can possibly find out how far one can go.</span>
+<span class="c1">//n go.</span>
+<span class="c1">//y tho</span>
+<span class="c1">//y those who will risk going too far can possibly find out how far one ca</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">3 is the third character from the biginnig while -5 is the fifth character from the end</p>
 </div>
 </div>
 </div>
