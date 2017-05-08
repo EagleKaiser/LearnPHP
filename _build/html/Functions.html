@@ -274,6 +274,22 @@
 </div>
 <div class="section" id="variable-scope">
 <h2>Variable Scope<a class="headerlink" href="#variable-scope" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$authorName</span> <span class="o">=</span> <span class="s2">&quot;William Shakespeare&quot;</span><span class="p">;</span>
+<span class="k">function</span> <span class="nf">setAuthorName</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nv">$authorName</span> <span class="o">=</span> <span class="s2">&quot;Charles Dickens&quot;</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="nv">$authorName</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">setAuthorName</span><span class="p">();</span>
+<span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$authorName</span><span class="p">;</span>
+<span class="c1">//output:</span>
+<span class="c1">//Charles Dickens</span>
+<span class="c1">//William Shakespeare</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
 </div>
 </div>
 

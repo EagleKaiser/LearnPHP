@@ -113,4 +113,36 @@ Variable Functions
 Variable Scope
 --------------
 
+.. code-block:: php
 
+    <?php
+    $authorName = "William Shakespeare";
+    function setAuthorName()
+    {
+        $authorName = "Charles Dickens";
+        echo $authorName;
+    }
+    setAuthorName();
+    echo "<br>";
+    echo $authorName;
+    //output: 
+    //Charles Dickens
+    //William Shakespeare
+    ?>
+
+Function Global
+---------------
+
+.. code-block:: php
+
+    <?php
+    $authorName = "William Shakespeare";
+    function setAuthorName()
+    {
+        Global $authorName;
+        $authorName = "Charles Dickens";
+    }
+    setAuthorName();
+    echo $authorName;
+    //output: Charles Dickens
+    ?>
