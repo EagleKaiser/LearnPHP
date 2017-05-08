@@ -89,9 +89,15 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">General Types</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">General Types</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#comments">Comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#case-sensitivity">Case Sensitivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#integers">Integers</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Strings.html">Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Arrays.html">Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Functions.html">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ControlStructure.html">Control Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ClassesAndObjects.html">Classess &amp; Objects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="WebProgramming.html">Web Programming</a></li>
@@ -161,6 +167,82 @@
             
   <div class="section" id="general-types">
 <h1>General Types<a class="headerlink" href="#general-types" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="comments">
+<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="c1">// C++ line Comment</span>
+
+<span class="cm">/*</span>
+<span class="cm">C-style comment block</span>
+<span class="cm">*/</span>
+
+<span class="c1"># Shell Style Comment</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="case-sensitivity">
+<h2>Case Sensitivity<a class="headerlink" href="#case-sensitivity" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Variables - are Case sensitive</p>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$caseSensitive</span> <span class="o">=</span> <span class="s2">&quot;I am unique.&quot;</span><span class="p">;</span>
+<span class="nv">$CaseSensitive</span> <span class="o">=</span> <span class="s2">&quot;I’m different.&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$caseSensitive</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$CaseSensitive</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><dl class="first docutils">
+<dt>Classes - are not case sensitive</dt>
+<dd><div class="first last highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">Company</span> <span class="p">{</span>
+<span class="c1">// …</span>
+<span class="p">}</span>
+<span class="nv">$c1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ComPanY</span><span class="p">;</span>
+<span class="nv">$c2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">COMPANY</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p class="first">Functions - are not case sensitive</p>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">function</span> <span class="nf">companyName</span><span class="p">()</span> <span class="p">{</span>
+<span class="c1">// …</span>
+<span class="p">}</span>
+<span class="nx">companyname</span><span class="p">();</span>
+<span class="nx">CompanyName</span><span class="p">();</span>
+<span class="nx">COMPANYNAME</span><span class="p">();</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="integers">
+<h2>Integers<a class="headerlink" href="#integers" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$regInt</span> <span class="o">=</span> <span class="mi">1234</span><span class="p">;</span>
+<span class="nv">$octNum</span> <span class="o">=</span> <span class="mo">01234</span><span class="p">;</span>
+<span class="nv">$hexNum</span> <span class="o">=</span> <span class="mh">0xABC</span><span class="p">;</span>
+<span class="nv">$binaryNum</span> <span class="o">=</span> <span class="mi">0</span><span class="nx">b1000</span><span class="p">;</span>
+
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$regInt</span><span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$octNum</span><span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$hexNum</span><span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$binaryNum</span><span class="p">);</span>
+<span class="c1">//output: int(1234) int(668) int(2748) int(8)</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
