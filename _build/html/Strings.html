@@ -102,6 +102,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#string-position">String position</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#string-replace">String Replace</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sub-strings">Sub Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#string-split">String Split</a></li>
 </ul>
 </li>
 </ul>
@@ -342,7 +343,23 @@
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">3 is the third character from the biginnig while -5 is the fifth character from the end</p>
+<p class="last">3 is the third character from the beginnig while -5 is the fifth character from the end</p>
+</div>
+</div>
+<div class="section" id="string-split">
+<h3>String Split<a class="headerlink" href="#string-split" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$quote</span> <span class="o">=</span> <span class="s2">&quot;Hello world&quot;</span><span class="p">;</span>
+<span class="nv">$varArray</span> <span class="o">=</span> <span class="nb">str_split</span><span class="p">(</span><span class="nv">$quote</span><span class="p">);</span>
+<span class="nx">Print_r</span><span class="p">(</span><span class="nv">$varArray</span><span class="p">);</span>
+<span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="nv">$varArray</span> <span class="o">=</span> <span class="nb">str_split</span><span class="p">(</span><span class="nv">$quote</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nx">Print_r</span><span class="p">(</span><span class="nv">$varArray</span><span class="p">);</span>
+<span class="c1">//output:</span>
+<span class="c1">//Array ( [0] =&gt; H [1] =&gt; e [2] =&gt; l [3] =&gt; l [4] =&gt; o [5] =&gt; [6] =&gt; w [7] =&gt; o [8] =&gt; r [9] =&gt; l [10] =&gt; d )</span>
+<span class="c1">//Array ( [0] =&gt; Hel [1] =&gt; lo [2] =&gt; wor [3] =&gt; ld )</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
 </div>
 </div>
 </div>
