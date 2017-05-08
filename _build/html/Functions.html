@@ -244,31 +244,33 @@
 <div class="section" id="returning-values">
 <h2>Returning Values<a class="headerlink" href="#returning-values" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
-<span class="k">function</span> <span class="nf">bookByAuthorYear</span><span class="p">(</span><span class="nv">$tempAuthorName</span><span class="p">,</span> <span class="nv">$tempYear</span> <span class="o">=</span> <span class="mi">1910</span><span class="p">)</span>
+<span class="k">function</span> <span class="nf">bookByAuthorYear</span><span class="p">(</span><span class="nv">$authorName</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="k">echo</span> <span class="nv">$tempYear</span><span class="p">;</span>
-    <span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
-    <span class="k">echo</span> <span class="nv">$tempAuthorName</span><span class="p">;</span>
-    <span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="nv">$authorName</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nv">$year</span> <span class="o">=</span> <span class="mi">1920</span><span class="p">;</span>
 <span class="k">function</span> <span class="nf">getAuthor</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="s2">&quot;William Shakespeare&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nx">bookByAuthorYear</span><span class="p">(</span><span class="nx">getAuthor</span><span class="p">());</span>
-<span class="nx">bookByAuthorYear</span><span class="p">(</span><span class="nx">getAuthor</span><span class="p">(),</span> <span class="nv">$year</span><span class="p">);</span>
-<span class="c1">//output:</span>
-<span class="c1">//1910</span>
-<span class="c1">//William Shakespeare</span>
-<span class="c1">//1920</span>
-<span class="c1">//William Shakespeare</span>
+<span class="c1">//output: William Shakespeare</span>
 <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="variable-functions">
 <h2>Variable Functions<a class="headerlink" href="#variable-functions" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">function</span> <span class="nf">getAuthor</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;Charles Dickens&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nv">$variableFunctionName</span> <span class="o">=</span> <span class="s2">&quot;getAuthor&quot;</span><span class="p">;</span>
+<span class="nv">$variableFunctionName</span><span class="p">();</span>
+<span class="c1">//output: Charles Dickens</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="variable-scope">
 <h2>Variable Scope<a class="headerlink" href="#variable-scope" title="Permalink to this headline">¶</a></h2>

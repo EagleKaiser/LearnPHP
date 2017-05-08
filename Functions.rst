@@ -97,6 +97,17 @@ Returning Values
 Variable Functions
 ------------------
 
+.. code-block:: php
+
+    <?php
+    function getAuthor()
+    {
+        echo "Charles Dickens";        
+    }
+    $variableFunctionName = "getAuthor";
+    $variableFunctionName();
+    //output: Charles Dickens
+    ?>
 
 
 Variable Scope
