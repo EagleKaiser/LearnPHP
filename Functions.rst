@@ -1,2 +1,91 @@
 Functions
 =========
+
+What is a Function
+------------------
+
+* Block of code 
+* Performs a specific task 
+* Used throughout your program
+
+.. code-block:: php
+
+    <?php
+    function createName($parameter, $anotherParameter) 
+    {
+     //… perform some function here 
+    }
+    ?>
+
+Creating/Calling a function 
+---------------------------
+
+.. code-block:: php
+
+    <?php
+    listOfBooks();
+
+    function listOfBooks()
+    {
+        echo "Hamlet<br>";
+        echo "Romeo and Juliet<br>";
+    }
+    //output: Hamlet
+    //Romeo and Juliet 
+    ?>
+
+.. code-block:: php
+
+    <?php
+    function bookByAuthorYear($authorName, $year)
+    {
+        echo $year;
+        echo "\n";
+        echo $authorName;
+    }
+    $authorName = "William Shakespeare";
+    bookByAuthorYear($authorName, 1910);
+    ?>
+
+Passing/Default parameters
+--------------------------
+
+.. code-block:: php
+
+    <?php
+    function bookByAuthorYear($tempAuthorName, $tempYear = 1910)
+    {
+        echo $tempYear;
+        echo "<br>";
+        echo $tempAuthorName;
+        echo "<br>";
+    }
+    $year = 1920;
+    $authorName = "William Shakespeare";
+    bookByAuthorYear($authorName);
+    bookByAuthorYear($authorName, $year);
+    //output:
+    //1910
+    //William Shakespeare
+    //1920
+    //William Shakespeare
+    ?>
+
+.. note:: 
+
+    All required parameters shoud be at the begining of the function parameter and defaults should be at the end.
+
+
+Returning Values
+----------------
+
+
+Variable Functions
+------------------
+
+
+
+Variable Scope
+--------------
+
+

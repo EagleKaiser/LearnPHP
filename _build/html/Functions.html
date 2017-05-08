@@ -35,7 +35,9 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="LearnPHP  documentation" href="index.html"/> 
+    <link rel="top" title="LearnPHP  documentation" href="index.html"/>
+        <link rel="next" title="Control Structure" href="ControlStructure.html"/>
+        <link rel="prev" title="Arrays" href="Arrays.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -85,11 +87,20 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GeneralTypes.html">General Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Strings.html">Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Arrays.html">Arrays</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-a-function">What is a Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-calling-a-function">Creating/Calling a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#passing-default-parameters">Passing/Default parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#returning-values">Returning Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#variable-functions">Variable Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#variable-scope">Variable Scope</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="ControlStructure.html">Control Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ClassesAndObjects.html">Classess &amp; Objects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="WebProgramming.html">Web Programming</a></li>
@@ -159,6 +170,86 @@
             
   <div class="section" id="functions">
 <h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-a-function">
+<h2>What is a Function<a class="headerlink" href="#what-is-a-function" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Block of code</li>
+<li>Performs a specific task</li>
+<li>Used throughout your program</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">function</span> <span class="nf">createName</span><span class="p">(</span><span class="nv">$parameter</span><span class="p">,</span> <span class="nv">$anotherParameter</span><span class="p">)</span>
+<span class="p">{</span>
+ <span class="c1">//… perform some function here</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-calling-a-function">
+<h2>Creating/Calling a function<a class="headerlink" href="#creating-calling-a-function" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nx">listOfBooks</span><span class="p">();</span>
+
+<span class="k">function</span> <span class="nf">listOfBooks</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;Hamlet&lt;br&gt;&quot;</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">&quot;Romeo and Juliet&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">//output: Hamlet</span>
+<span class="c1">//Romeo and Juliet</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">function</span> <span class="nf">bookByAuthorYear</span><span class="p">(</span><span class="nv">$authorName</span><span class="p">,</span> <span class="nv">$year</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">echo</span> <span class="nv">$year</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="nv">$authorName</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nv">$authorName</span> <span class="o">=</span> <span class="s2">&quot;William Shakespeare&quot;</span><span class="p">;</span>
+<span class="nx">bookByAuthorYear</span><span class="p">(</span><span class="nv">$authorName</span><span class="p">,</span> <span class="mi">1910</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="passing-default-parameters">
+<h2>Passing/Default parameters<a class="headerlink" href="#passing-default-parameters" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">function</span> <span class="nf">bookByAuthorYear</span><span class="p">(</span><span class="nv">$tempAuthorName</span><span class="p">,</span> <span class="nv">$tempYear</span> <span class="o">=</span> <span class="mi">1910</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">echo</span> <span class="nv">$tempYear</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="nv">$tempAuthorName</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nv">$year</span> <span class="o">=</span> <span class="mi">1920</span><span class="p">;</span>
+<span class="nv">$authorName</span> <span class="o">=</span> <span class="s2">&quot;William Shakespeare&quot;</span><span class="p">;</span>
+<span class="nx">bookByAuthorYear</span><span class="p">(</span><span class="nv">$authorName</span><span class="p">);</span>
+<span class="nx">bookByAuthorYear</span><span class="p">(</span><span class="nv">$authorName</span><span class="p">,</span> <span class="nv">$year</span><span class="p">);</span>
+<span class="c1">//output:</span>
+<span class="c1">//1910</span>
+<span class="c1">//William Shakespeare</span>
+<span class="c1">//1920</span>
+<span class="c1">//William Shakespeare</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All required parameters shoud be at the begining of the function parameter and defaults should be at the end.</p>
+</div>
+</div>
+<div class="section" id="returning-values">
+<h2>Returning Values<a class="headerlink" href="#returning-values" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="variable-functions">
+<h2>Variable Functions<a class="headerlink" href="#variable-functions" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="variable-scope">
+<h2>Variable Scope<a class="headerlink" href="#variable-scope" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
 
@@ -168,6 +259,15 @@
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ControlStructure.html" class="btn btn-neutral float-right" title="Control Structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Arrays.html" class="btn btn-neutral" title="Arrays" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
