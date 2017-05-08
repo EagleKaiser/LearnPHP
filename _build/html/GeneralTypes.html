@@ -293,9 +293,11 @@
 <div class="section" id="constant">
 <h2>Constant<a class="headerlink" href="#constant" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
-<span class="nb">define</span><span class="p">(</span><span class="s1">&#39;NEW_CONSTANT&#39;</span><span class="p">,</span> <span class="s2">&quot;Hello new constant&quot;</span><span class="p">);</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">&#39;NEW_CONSTANT&#39;</span><span class="p">,</span> <span class="s2">&quot;Hello new constant &quot;</span><span class="p">);</span>
 
 <span class="k">echo</span> <span class="nx">NEW_CONSTANT</span><span class="p">;</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nx">NEW_CONSTANT</span><span class="p">);</span>
+<span class="c1">//output: Hello new constant string(19) &quot;Hello new constant &quot;</span>
 <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
 </div>
