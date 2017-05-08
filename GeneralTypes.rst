@@ -132,5 +132,7 @@ Constant
 .. note:: 
 
     * Constant naming convention in php is having the name of the constant all caps and seperating the words by underscore
-    * parameters are define(name, value);
+    * parameters are define('name', value);
+    * Constants can be access by other functions or classes (Glopal variables)
+
 
