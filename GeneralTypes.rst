@@ -105,9 +105,17 @@ Booleans
     $StringNoValue = "";
 
     var_dump($bool);
-    var_dump($intHasValue);
-    var_dump($intNoValue);
-    var_dump($StringHasValue);
-    var_dump($StringNoValue);
+    var_dump((bool)$intHasValue);
+    var_dump((bool)$intNoValue);
+    var_dump((bool)$StringHasValue);
+    var_dump((bool)$StringNoValue);
     //output: bool(false) bool(true) bool(false) bool(true) bool(false) 
     ?>
+
+.. note:: 
+
+    putting (bool) in front of variables will check if empty or not
+
+Constant
+--------
+

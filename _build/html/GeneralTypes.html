@@ -95,6 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#integers">Integers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#floats">Floats</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#booleans">Booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#constant">Constant</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Strings.html">Strings</a></li>
@@ -276,14 +277,21 @@
 <span class="nv">$StringNoValue</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
 
 <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$bool</span><span class="p">);</span>
-<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$intHasValue</span><span class="p">);</span>
-<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$intNoValue</span><span class="p">);</span>
-<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$StringHasValue</span><span class="p">);</span>
-<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$StringNoValue</span><span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">((</span><span class="nx">bool</span><span class="p">)</span><span class="nv">$intHasValue</span><span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">((</span><span class="nx">bool</span><span class="p">)</span><span class="nv">$intNoValue</span><span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">((</span><span class="nx">bool</span><span class="p">)</span><span class="nv">$StringHasValue</span><span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">((</span><span class="nx">bool</span><span class="p">)</span><span class="nv">$StringNoValue</span><span class="p">);</span>
 <span class="c1">//output: bool(false) bool(true) bool(false) bool(true) bool(false)</span>
 <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">butting (bool) in front of variables will check if empty or not</p>
+</div>
+</div>
+<div class="section" id="constant">
+<h2>Constant<a class="headerlink" href="#constant" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
