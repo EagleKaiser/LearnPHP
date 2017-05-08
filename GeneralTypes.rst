@@ -84,4 +84,5 @@ Floats
     var_dump($flaot);
     var_dump($scientific);
     var_dump($scientific2);
+    //output: float(1.234) float(1234) float(0.1234) 
     ?>
