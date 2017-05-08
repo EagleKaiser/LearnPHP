@@ -100,6 +100,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#changing-case">Changing Case</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#string-length">String length</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#string-position">String position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#string-replace">String Replace</a></li>
 </ul>
 </li>
 </ul>
@@ -304,6 +305,22 @@
 <li>strpos is case sensitive</li>
 <li>If the letter or word does not exist the return is nothing</li>
 </ul>
+</div>
+</div>
+<div class="section" id="string-replace">
+<h3>String Replace<a class="headerlink" href="#string-replace" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$quote</span> <span class="o">=</span> <span class="s2">&quot;To be or not to be, that is the question.&quot;</span><span class="p">;</span>
+<span class="nv">$replaced</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="s2">&quot;be&quot;</span><span class="p">,</span> <span class="s2">&quot;know&quot;</span><span class="p">,</span> <span class="nv">$quote</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$replaced</span><span class="p">;</span>
+<span class="nv">$replaced</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="s2">&quot;know&quot;</span><span class="p">,</span> <span class="s2">&quot;be&quot;</span><span class="p">,</span> <span class="nv">$replaced</span><span class="p">,</span> <span class="nv">$count</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$replaced</span><span class="o">.</span><span class="s2">&quot;number of replaces= &quot;</span><span class="o">.</span><span class="nv">$count</span><span class="p">;</span>
+<span class="c1">//output:</span>
+<span class="c1">//To know or not to know, that is the question.</span>
+<span class="c1">//To be or not to be, that is the question.</span>
+<span class="c1">//number of replaces= 2</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
 </div>
 </div>
 </div>

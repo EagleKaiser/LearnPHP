@@ -139,3 +139,20 @@ String position
 
     * strpos is case sensitive
     * If the letter or word does not exist the return is nothing
+
+String Replace
+~~~~~~~~~~~~~~
+
+.. code-block:: php
+
+    <?php
+    $quote = "To be or not to be, that is the question.";
+    $replaced = str_replace("be", "know", $quote)."<br>";
+    echo $replaced;
+    $replaced = str_replace("know", "be", $replaced, $count);
+    echo $replaced."number of replaces= ".$count;
+    //output: 
+    //To know or not to know, that is the question.
+    //To be or not to be, that is the question.
+    //number of replaces= 2
+    ?>
