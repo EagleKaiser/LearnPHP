@@ -96,6 +96,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#floats">Floats</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#booleans">Booleans</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#constant">Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#determine-type">Determine Type</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Strings.html">Strings</a></li>
@@ -308,6 +309,26 @@
 <li>parameters are define(&#8216;name&#8217;, value);</li>
 <li>Constants can be access by other functions or classes (Glopal variables)</li>
 </ul>
+</div>
+</div>
+<div class="section" id="determine-type">
+<h2>Determine Type<a class="headerlink" href="#determine-type" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">&#39;CHECK_CONSTANT&#39;</span><span class="p">,</span> <span class="s2">&quot;Yes, I am a constant!&quot;</span><span class="p">);</span>
+
+<span class="nv">$intVar</span> <span class="o">=</span> <span class="mi">1234</span><span class="p">;</span>
+<span class="nv">$stringVar</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m a String&quot;</span><span class="p">;</span>
+<span class="nv">$boolVar</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+<span class="nv">$floatVar</span> <span class="o">=</span> <span class="mf">12.34</span><span class="p">;</span>
+
+<span class="k">echo</span> <span class="nb">is_int</span><span class="p">(</span><span class="nv">$floatVar</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nb">is_string</span><span class="p">(</span><span class="nv">$stringVar</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nb">is_bool</span><span class="p">(</span><span class="nv">$boolVar</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nb">is_float</span><span class="p">(</span><span class="nv">$floatVar</span><span class="p">);</span>
+
+<span class="k">echo</span> <span class="nb">define</span><span class="p">(</span><span class="s1">&#39;NEW_CONSTANT&#39;</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
 </div>
 </div>
 </div>
