@@ -86,3 +86,14 @@ Floats
     var_dump($scientific2);
     //output: float(1.234) float(1234) float(0.1234) 
     ?>
+
+.. note:: Note
+
+    *Scientific notation can be used like e 
+    *If a second variable is declared with the samename|
+    the first will be overriden
+
+Booleans
+--------
+
+.. code-block:: language
