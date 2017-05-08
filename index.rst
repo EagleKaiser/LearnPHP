@@ -18,6 +18,7 @@ Welcome to LearnPHP's documentation!
    :caption: Contents:
 
    Introduction
+   GeneralTypes
 
 
 Indices and tables
