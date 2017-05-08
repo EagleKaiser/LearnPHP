@@ -90,8 +90,7 @@ Floats
 .. note:: Note
 
     * Scientific notation can be used like e 
-    * If a second variable is declared with the samename|
-    the first will be overriden
+    * If a second variable is declared with the samename the first will be overriden
 
 Booleans
 --------
