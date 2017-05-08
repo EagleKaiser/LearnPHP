@@ -19,6 +19,13 @@ Welcome to LearnPHP's documentation!
 
    Introduction
    GeneralTypes
+   Strings
+   Arrays
+   Functions
+   ControlStructure
+   ClassesAndObjects
+   WebProgramming
+   Databases
 
 
 Indices and tables
