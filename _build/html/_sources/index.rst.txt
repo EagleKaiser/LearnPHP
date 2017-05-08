@@ -19,9 +19,9 @@ Welcome to LearnPHP's documentation!
 
    Introduction
    GeneralTypes
-   Strings
-   Arrays
    Functions
+   Strings
+   Arrays   
    ControlStructure
    ClassesAndObjects
    WebProgramming
