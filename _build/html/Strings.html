@@ -94,7 +94,13 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Strings</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#single-quoted-strings">Single Quoted Strings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#double-quoted-strings">Double Quoted Strings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#string-functions">String functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#here-document">Here Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#print">print()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#string-built-in-functions">String built in functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#changing-case">Changing Case</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#string-length">String length</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Arrays.html">Arrays</a></li>
@@ -206,8 +212,74 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="string-functions">
-<h2>String functions<a class="headerlink" href="#string-functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="here-document">
+<h2>Here Document<a class="headerlink" href="#here-document" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">echo</span> <span class="s">&lt;&lt;&lt;</span><span class="dl">EOT</span><span class="s"></span>
+<span class="s">Be not afraid of greatness;</span>
+<span class="s">some are born great,</span>
+<span class="s">some achive greatness,</span>
+<span class="s">and others have greatness thrust upon them.</span>
+
+<span class="s">                    -William Shakespeare</span>
+<span class="dl">EOT</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Do not put a space before or after EOT</p>
+</div>
+</div>
+<div class="section" id="print">
+<h2>print()<a class="headerlink" href="#print" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">print</span> <span class="s2">&quot;without parentheses&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;with parentheses&lt;br&gt;&quot;</span><span class="p">);</span>
+<span class="k">echo</span> <span class="s2">&quot;can&quot;</span><span class="p">,</span> <span class="s2">&quot;&#39;t &quot;</span><span class="p">,</span> <span class="s2">&quot;be used &quot;</span><span class="p">,</span> <span class="s2">&quot;with &quot;</span><span class="p">,</span> <span class="s2">&quot;print&quot;</span><span class="p">;</span>
+<span class="c1">//output:</span>
+<span class="c1">//without parentheses</span>
+<span class="c1">//with parentheses</span>
+<span class="c1">//can&#39;t be used with print</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">last statement can&#8217;t be done with print</p>
+</div>
+</div>
+<div class="section" id="string-built-in-functions">
+<h2>String built in functions<a class="headerlink" href="#string-built-in-functions" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://php.net/manual/en/ref.strings.php">String library online</a></p>
+<div class="section" id="changing-case">
+<h3>Changing Case<a class="headerlink" href="#changing-case" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$quote</span> <span class="o">=</span> <span class="s2">&quot;To be or not to be, that is the question.&quot;</span><span class="p">;</span>
+<span class="nv">$quote</span> <span class="o">=</span> <span class="nb">strtolower</span><span class="p">(</span><span class="nv">$quote</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$quote</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span>
+<span class="nv">$quote</span> <span class="o">=</span> <span class="nb">strtoupper</span><span class="p">(</span><span class="nv">$quote</span><span class="p">)</span><span class="o">:</span>
+<span class="k">echo</span> <span class="nv">$quote</span>
+<span class="c1">//output:</span>
+<span class="c1">//to be or not to be, that is the question.</span>
+<span class="c1">//TO BE OR NOT TO BE, THAT IS THE QUESTION.</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="string-length">
+<h3>String length<a class="headerlink" href="#string-length" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$quote</span> <span class="o">=</span> <span class="s2">&quot;To be or not to be, that is the question.&quot;</span><span class="p">;</span>
+<span class="nv">$length</span> <span class="o">=</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$quote</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$length</span><span class="p">;</span>
+<span class="c1">//output: 54</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
