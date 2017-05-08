@@ -91,7 +91,12 @@
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GeneralTypes.html">General Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Functions.html">Functions</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Strings</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Strings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#single-quoted-strings">Single Quoted Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#double-quoted-strings">Double Quoted Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#string-functions">String functions</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Arrays.html">Arrays</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ControlStructure.html">Control Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ClassesAndObjects.html">Classess &amp; Objects</a></li>
@@ -162,6 +167,48 @@
             
   <div class="section" id="strings">
 <h1>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="single-quoted-strings">
+<h2>Single Quoted Strings<a class="headerlink" href="#single-quoted-strings" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$currency</span> <span class="o">=</span> <span class="s1">&#39;penny&#39;</span><span class="p">;</span>
+<span class="nv">$sampleString</span> <span class="o">=</span> <span class="s1">&#39;A $currency saved is a $currency earned.&#39;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$sampleString</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="nv">$misc</span> <span class="o">=</span> <span class="s1">&#39;St. Patrick\&#39;s Day\n&#39;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$misc</span><span class="p">;</span>
+<span class="c1">//output:</span>
+<span class="c1">//A $currency saved is a $currency earned.</span>
+<span class="c1">//St. Patrick&#39;s Day\n</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="double-quoted-strings">
+<h2>Double Quoted Strings<a class="headerlink" href="#double-quoted-strings" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$currency</span> <span class="o">=</span> <span class="nx">penny</span><span class="p">;</span>
+<span class="nv">$sampleString</span> <span class="o">=</span> <span class="s2">&quot;A </span><span class="si">$currency</span><span class="s2"> saved is a </span><span class="si">$currency</span><span class="s2"> earned.&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$sampleString</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+
+<span class="nv">$var</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">&quot;</span><span class="si">{</span><span class="nv">$var</span><span class="si">}</span><span class="s2">nd place&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$var</span><span class="o">.</span><span class="s2">&quot;nd place&lt;br&gt;&quot;</span><span class="p">;</span>
+
+<span class="nv">$misc</span> <span class="o">=</span> <span class="s2">&quot;St. Patrick</span><span class="se">\&quot;</span><span class="s2">s &lt;br&gt;Day</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$misc</span><span class="p">;</span>
+<span class="c1">//output:</span>
+<span class="c1">//A penny saved is a penny earned.</span>
+<span class="c1">//2nd place</span>
+<span class="c1">//2nd place</span>
+<span class="c1">//St. Patrick&quot;s</span>
+<span class="c1">//Day</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="string-functions">
+<h2>String functions<a class="headerlink" href="#string-functions" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
 
