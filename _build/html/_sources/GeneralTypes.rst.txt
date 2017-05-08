@@ -155,3 +155,7 @@ Determine Type
 
     echo defined('CHECK_CONSTANT');
     ?>
+
+.. note:: 
+
+    If hte variable exist these functions will returen 1 otherwise they will return nothing
