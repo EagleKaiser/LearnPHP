@@ -260,17 +260,28 @@
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>Note</p>
-<ul class="simple">
+<ul class="last simple">
 <li>Scientific notation can be used like e</li>
-<li>If a second variable is declared with the samename|</li>
+<li>If a second variable is declared with the same name the first will be overriden</li>
 </ul>
-<p class="last">the first will be overriden</p>
 </div>
 </div>
 <div class="section" id="booleans">
 <h2>Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-language"><div class="highlight"><pre><span></span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$bool</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+<span class="nv">$intHasValue</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nv">$intNoValue</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="nv">$StringHasValue</span> <span class="o">=</span> <span class="s2">&quot;abc&quot;</span><span class="p">;</span>
+<span class="nv">$StringNoValue</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$bool</span><span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$intHasValue</span><span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$intNoValue</span><span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$StringHasValue</span><span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$StringNoValue</span><span class="p">);</span>
+<span class="c1">//output: bool(false) bool(true) bool(false) bool(true) bool(false)</span>
+<span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
 </div>
 </div>

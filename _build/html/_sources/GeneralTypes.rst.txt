@@ -87,13 +87,27 @@ Floats
     //output: float(1.234) float(1234) float(0.1234) 
     ?>
 
-.. note:: Note
+.. note:: 
 
     * Scientific notation can be used like e 
-    * If a second variable is declared with the samename|
-    the first will be overriden
+    * If a second variable is declared with the same name the first will be overriden
 
 Booleans
 --------
 
-.. code-block:: language
+.. code-block:: php
+
+    <?php
+    $bool = false;
+    $intHasValue = 1;
+    $intNoValue = 0;
+    $StringHasValue = "abc";
+    $StringNoValue = "";
+
+    var_dump($bool);
+    var_dump($intHasValue);
+    var_dump($intNoValue);
+    var_dump($StringHasValue);
+    var_dump($StringNoValue);
+    //output: bool(false) bool(true) bool(false) bool(true) bool(false) 
+    ?>
