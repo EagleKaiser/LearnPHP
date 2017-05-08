@@ -99,6 +99,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#string-built-in-functions">String built in functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#changing-case">Changing Case</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#string-length">String length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#string-position">String position</a></li>
 </ul>
 </li>
 </ul>
@@ -278,6 +279,31 @@
 <span class="c1">//output: 54</span>
 <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="string-position">
+<h3>String position<a class="headerlink" href="#string-position" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$quote</span> <span class="o">=</span> <span class="s2">&quot;Courage is resistance to fear, mastery of fear, no absence of fear.&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nb">strpos</span><span class="p">(</span><span class="nv">$quote</span><span class="p">,</span> <span class="s2">&quot;fear&quot;</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nb">strpos</span><span class="p">(</span><span class="nv">$quote</span><span class="p">,</span> <span class="s2">&quot;fear&quot;</span><span class="p">,</span><span class="mi">26</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nb">strpos</span><span class="p">(</span><span class="nv">$quote</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nb">strpos</span><span class="p">(</span><span class="nv">$quote</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nb">strpos</span><span class="p">(</span><span class="nv">$quote</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">);</span>
+<span class="c1">//output:</span>
+<span class="c1">//25</span>
+<span class="c1">//42</span>
+<span class="c1">//19</span>
+<span class="c1">//0</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>strpos is case sensitive</li>
+<li>If the letter or word does not exist the return is nothing</li>
+</ul>
 </div>
 </div>
 </div>

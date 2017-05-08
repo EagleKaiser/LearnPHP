@@ -115,3 +115,27 @@ String length
     echo $length;
     //output: 54
     ?>
+
+String position
+~~~~~~~~~~~~~~~
+
+.. code-block:: php
+
+    <?php
+    $quote = "Courage is resistance to fear, mastery of fear, no absence of fear.";
+    echo strpos($quote, "fear")."<br>";
+    echo strpos($quote, "fear",26)."<br>";
+    echo strpos($quote, "c")."<br>";
+    echo strpos($quote, "C")."<br>";
+    echo strpos($quote, "z");
+    //output:
+    //25
+    //42
+    //19
+    //0
+    ?>
+
+.. note:: 
+
+    * strpos is case sensitive
+    * If the letter or word does not exist the return is nothing
