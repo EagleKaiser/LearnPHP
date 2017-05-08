@@ -88,10 +88,8 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#chapter-one">Chapter one</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#chapter-one-two">Chapter one.two</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#hello-world">Hello World!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#simple-web-script">Simple Web Script</a></li>
 </ul>
 </li>
 </ul>
@@ -159,11 +157,37 @@
             
   <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="chapter-one">
-<h2>Chapter one<a class="headerlink" href="#chapter-one" title="Permalink to this headline">¶</a></h2>
-<p>Hello</p>
-<div class="section" id="chapter-one-two">
-<h3>Chapter one.two<a class="headerlink" href="#chapter-one-two" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="hello-world">
+<h2>Hello World!<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$message</span> <span class="o">=</span> <span class="s2">&quot;Hello World!&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$message</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="simple-web-script">
+<h2>Simple Web Script<a class="headerlink" href="#simple-web-script" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$message</span> <span class="o">=</span> <span class="s2">&quot;Hello World!&quot;</span><span class="p">;</span>
+<span class="nv">$title</span> <span class="o">=</span> <span class="s2">&quot;HTML Sample&quot;</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+
+<span class="x">&lt;!DOCTYPE html&gt;</span>
+<span class="x">&lt;html&gt;</span>
+<span class="x">    &lt;head&gt;</span>
+<span class="x">        &lt;title&gt;PHP Fundamentals - </span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$title</span><span class="cp">?&gt;</span><span class="x">&lt;/title&gt;</span>
+<span class="x">    &lt;/head&gt;</span>
+<span class="x">    &lt;body&gt;</span>
+<span class="x">        &lt;h1&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$message</span> <span class="cp">?&gt;</span><span class="x">&lt;/h1&gt;</span>
+<span class="x">    &lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Reserved Keywords and Variables</p>
+<p class="last">if, else, while, and, or, return, new, class, switch, break, for, foreach, static, public require, require_once, include, include_once, extends, continue, print, echo, var endfor, endif, endforeach, endswitch, endwhile $_GET, $_POST, $_COOKIE, $_SERVER, $_FILES, $_ENV, $this,</p>
 </div>
 </div>
 </div>
