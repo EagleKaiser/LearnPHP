@@ -145,13 +145,13 @@ Determine Type
 
     $intVar = 1234;
     $stringVar = "I'm a String";
-    $boolVar = false;
+    $boolVar = true;
     $floatVar = 12.34;
 
-    echo is_int($floatVar);
+    echo is_int($intVar);
     echo is_string($stringVar);
     echo is_bool($boolVar);
     echo is_float($floatVar);
 
-    echo define('NEW_CONSTANT');
+    echo defined('CHECK_CONSTANT');
     ?>
