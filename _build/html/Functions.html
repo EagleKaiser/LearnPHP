@@ -97,6 +97,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#returning-values">Returning Values</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#variable-functions">Variable Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#variable-scope">Variable Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#function-global-scope">Function Global Scope</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Strings.html">Strings</a></li>
@@ -287,6 +288,22 @@
 <span class="c1">//output:</span>
 <span class="c1">//Charles Dickens</span>
 <span class="c1">//William Shakespeare</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="function-global-scope">
+<h2>Function Global Scope<a class="headerlink" href="#function-global-scope" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$authorName</span> <span class="o">=</span> <span class="s2">&quot;William Shakespeare&quot;</span><span class="p">;</span>
+<span class="k">function</span> <span class="nf">setAuthorName</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">Global</span> <span class="nv">$authorName</span><span class="p">;</span>
+    <span class="nv">$authorName</span> <span class="o">=</span> <span class="s2">&quot;Charles Dickens&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">setAuthorName</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nv">$authorName</span><span class="p">;</span>
+<span class="c1">//output: Charles Dickens</span>
 <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
 </div>

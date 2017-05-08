@@ -130,4 +130,19 @@ Variable Scope
     //William Shakespeare
     ?>
 
+Function Global Scope
+---------------------
 
+.. code-block:: php
+
+    <?php
+    $authorName = "William Shakespeare";
+    function setAuthorName()
+    {
+        Global $authorName;
+        $authorName = "Charles Dickens";
+    }
+    setAuthorName();
+    echo $authorName;
+    //output: Charles Dickens
+    ?>

@@ -130,8 +130,8 @@ Variable Scope
     //William Shakespeare
     ?>
 
-Function Global
----------------
+Function Global Scope
+---------------------
 
 .. code-block:: php
 
