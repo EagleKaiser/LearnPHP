@@ -114,8 +114,21 @@ Booleans
 
 .. note:: 
 
-    butting (bool) in front of variables will check if empty or not
+    putting (bool) in front of variables will check if empty or not
 
 Constant
 --------
+
+.. code-block:: php
+
+    <?php
+    define('NEW_CONSTANT', "Hello new constant");
+
+    echo NEW_CONSTANT;
+    ?>
+    
+.. note:: 
+
+    * Constant naming convention in php is having the name of the constant all caps and seperating the words by underscore
+    * parameters are define(name, value);
 

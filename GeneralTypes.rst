@@ -119,3 +119,18 @@ Booleans
 Constant
 --------
 
+.. code-block:: php
+
+    <?php
+    define('NEW_CONSTANT', "Hello new constant ");
+
+    echo NEW_CONSTANT;
+    var_dump(NEW_CONSTANT);
+    //output: Hello new constant string(19) "Hello new constant " 
+    ?>
+
+.. note:: 
+
+    * Constant naming convention in php is having the name of the constant all caps and seperating the words by underscore
+    * parameters are define(name, value);
+
