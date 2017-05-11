@@ -16,3 +16,22 @@ Indexed Arrays
     echo "<br>";
     print_r($allValues);
     ?>
+
+Associative Arrays
+------------------
+
+.. code-block:: php
+
+    <?php
+    $authors = array(
+    "quarky" => "Charles Dickens",
+    10 => "Jane",
+    "poetic" => "William",
+    "Mark Twain"
+    );
+    print_r($authors);
+    ?>
+
+.. note:: 
+
+    Mark Twain will get an index of 11 which is an increment of the integer 10 that we have provided for Jane.

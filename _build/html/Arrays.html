@@ -94,6 +94,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Strings.html">Strings</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Arrays</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#indexed-arrays">Indexed Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#associative-arrays">Associative Arrays</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ControlStructure.html">Control Structure</a></li>
@@ -178,6 +179,24 @@
 <span class="nb">print_r</span><span class="p">(</span><span class="nv">$allValues</span><span class="p">);</span>
 <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="associative-arrays">
+<h2>Associative Arrays<a class="headerlink" href="#associative-arrays" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$authors</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+<span class="s2">&quot;quarky&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Charles Dickens&quot;</span><span class="p">,</span>
+<span class="mi">10</span> <span class="o">=&gt;</span> <span class="s2">&quot;Jane&quot;</span><span class="p">,</span>
+<span class="s2">&quot;poetic&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;William&quot;</span><span class="p">,</span>
+<span class="s2">&quot;Mark Twain&quot;</span>
+<span class="p">);</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$authors</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Mark Twain will get an index of 11 which is an increment of the integer 10 that we have provided for Jane.</p>
 </div>
 </div>
 </div>
