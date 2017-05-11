@@ -85,5 +85,41 @@ array_push()
 .. code-block:: php
 
     <?php
-    
+    $authors = array("charles", "hello", "world", "Array", 13);
+    array_push($authors, "Louisa");
+    $authors[] = "Montgomery";
+    $authors["Hi"] = "Montgomery";
+    print_r($authors);
+    //output:
+    //Array ( [0] => charles [1] => hello [2] => world [3] => Array [4] => 13 [5] => Louisa [6] => Montgomery [Hi] => Montgomery ) 
+    ?>
+
+.. note:: 
+
+    * There are two ways to add elements to an array which are array_push and $array[]= 
+    * The second method is prefered because if the array is not declared it will create a new array and add the value as the first parameter
+
+aray_pop (remove lase item)
+---------------------------
+
+.. code-block:: php
+
+    <?php
+    $authors = array("charles", "hello", "world", "Array");
+    $lastValue = array_pop($authors);
+    echo $lastValue."<br>";
+    print_r($authors);
+    //output:
+    //Array
+    //Array ( [0] => charles [1] => hello [2] => world ) 
+    ?>
+
+unset (delete arrray or element from array
+------------------------------------------
+
+.. code-block:: php
+
+    <?php
+    $authors = array("charles", "hello", "world", "Array");
+    unset($authors[1], $authors[0]
     ?>

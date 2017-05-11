@@ -158,4 +158,4 @@ Determine Type
 
 .. note:: 
 
-    If hte variable exist these functions will returen 1 otherwise they will return nothing
+    If the variable exist these functions will returen 1 otherwise they will return nothing

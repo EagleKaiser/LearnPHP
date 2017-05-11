@@ -97,6 +97,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#associative-arrays">Associative Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#array-key-exists">array_key_exists()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#in-array">in_array()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#array-push">array_push()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#aray-pop-remove-lase-item">aray_pop (remove lase item)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ControlStructure.html">Control Structure</a></li>
@@ -242,6 +244,40 @@
 <li>array function&#8217;s third parameter will indicate if the return type is the same as the search type ex. int == int</li>
 <li>In this example if we search for 13 int will return true but string &#8220;13&#8221; will return false</li>
 </ul>
+</div>
+</div>
+<div class="section" id="array-push">
+<h2>array_push()<a class="headerlink" href="#array-push" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$authors</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;charles&quot;</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="s2">&quot;Array&quot;</span><span class="p">,</span> <span class="mi">13</span><span class="p">);</span>
+<span class="nb">array_push</span><span class="p">(</span><span class="nv">$authors</span><span class="p">,</span> <span class="s2">&quot;Louisa&quot;</span><span class="p">);</span>
+<span class="nv">$authors</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">&quot;Montgomery&quot;</span><span class="p">;</span>
+<span class="nv">$authors</span><span class="p">[</span><span class="s2">&quot;Hi&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Montgomery&quot;</span><span class="p">;</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$authors</span><span class="p">);</span>
+<span class="c1">//output:</span>
+<span class="c1">//Array ( [0] =&gt; charles [1] =&gt; hello [2] =&gt; world [3] =&gt; Array [4] =&gt; 13 [5] =&gt; Louisa [6] =&gt; Montgomery [Hi] =&gt; Montgomery )</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>There are two ways to add elements to an array which are array_push and $array[]=</li>
+<li>The second method is prefered because if the array is not declared it will create a new array and add the value as the first parameter</li>
+</ul>
+</div>
+</div>
+<div class="section" id="aray-pop-remove-lase-item">
+<h2>aray_pop (remove lase item)<a class="headerlink" href="#aray-pop-remove-lase-item" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$authors</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;charles&quot;</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="s2">&quot;Array&quot;</span><span class="p">);</span>
+<span class="nv">$lastValue</span> <span class="o">=</span> <span class="nb">array_pop</span><span class="p">(</span><span class="nv">$authors</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$lastValue</span><span class="p">;</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$authors</span><span class="p">);</span>
+<span class="c1">//output:</span>
+<span class="c1">//ArrayArray ( [0] =&gt; charles [1] =&gt; hello [2] =&gt; world )</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
 </div>
 </div>
 </div>
