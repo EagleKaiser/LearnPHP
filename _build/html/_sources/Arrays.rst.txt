@@ -30,8 +30,11 @@ Associative Arrays
     "Mark Twain"
     );
     print_r($authors);
+    //output: 
+    //Array ( [quarky] => Charles Dickens [10] => Jane [poetic] => William [11] => Mark Twain ) 
     ?>
 
 .. note:: 
 
     Mark Twain will get an index of 11 which is an increment of the integer 10 that we have provided for Jane.
+
