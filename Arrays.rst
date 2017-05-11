@@ -78,3 +78,12 @@ in_array()
     * If value exist in array it will return 1 as true else it will return nothing as false
     * array function's third parameter will indicate if the return type is the same as the search type ex. int == int
     * In this example if we search for 13 int will return true but string "13" will return false 
+
+array_push()
+------------
+
+.. code-block:: php
+
+    <?php
+    
+    ?>

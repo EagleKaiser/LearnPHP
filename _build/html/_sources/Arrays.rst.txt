@@ -56,8 +56,25 @@ array_key_exists()
     echo array_key_exists(2, $firstType)."<br>";
     echo array_key_exists("poetic", $authors);
     //output:
-    hello
+    //hello
     //Charles Dickens
     //1
     //1
     ?>
+
+in_array()
+----------
+
+.. code-block:: php
+
+    <?php
+    $firstType = array("charles", "hello", "world", "Array", 13);
+    echo in_array("charles", $firstType)."<br>";
+    echo in_array("charles", $firstType, true);
+    ?>
+
+.. note:: 
+
+    * If value exist in array it will return 1 as true else it will return nothing as false
+    * array function's third parameter will indicate if the return type is the same as the search type ex. int == int
+    * In this example if we search for 13 int will return true but string "13" will return false 

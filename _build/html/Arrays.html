@@ -96,6 +96,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#indexed-arrays">Indexed Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#associative-arrays">Associative Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#array-key-exists">array_key_exists()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#in-array">in_array()</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ControlStructure.html">Control Structure</a></li>
@@ -217,12 +218,30 @@
 <span class="k">echo</span> <span class="nb">array_key_exists</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nv">$firstType</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
 <span class="k">echo</span> <span class="nb">array_key_exists</span><span class="p">(</span><span class="s2">&quot;poetic&quot;</span><span class="p">,</span> <span class="nv">$authors</span><span class="p">);</span>
 <span class="c1">//output:</span>
-<span class="nx">hello</span>
+<span class="c1">//hello</span>
 <span class="c1">//Charles Dickens</span>
 <span class="c1">//1</span>
 <span class="c1">//1</span>
 <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="in-array">
+<h2>in_array()<a class="headerlink" href="#in-array" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$firstType</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;charles&quot;</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="s2">&quot;Array&quot;</span><span class="p">,</span> <span class="mi">13</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nb">in_array</span><span class="p">(</span><span class="s2">&quot;charles&quot;</span><span class="p">,</span> <span class="nv">$firstType</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nb">in_array</span><span class="p">(</span><span class="s2">&quot;charles&quot;</span><span class="p">,</span> <span class="nv">$firstType</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>If value exist in array it will return 1 as true else it will return nothing as false</li>
+<li>array function&#8217;s third parameter will indicate if the return type is the same as the search type ex. int == int</li>
+<li>In this example if we search for 13 int will return true but string &#8220;13&#8221; will return false</li>
+</ul>
 </div>
 </div>
 </div>
