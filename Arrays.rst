@@ -114,8 +114,8 @@ aray_pop (remove lase item)
     //Array ( [0] => charles [1] => hello [2] => world ) 
     ?>
 
-unset (delete arrray or element from array
-------------------------------------------
+unset (delete arrray or element from array)
+-------------------------------------------
 
 .. code-block:: php
 
