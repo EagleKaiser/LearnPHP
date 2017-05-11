@@ -92,7 +92,10 @@
 <li class="toctree-l1"><a class="reference internal" href="GeneralTypes.html">General Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Functions.html">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Strings.html">Strings</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Arrays</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Arrays</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#indexed-arrays">Indexed Arrays</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="ControlStructure.html">Control Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ClassesAndObjects.html">Classess &amp; Objects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="WebProgramming.html">Web Programming</a></li>
@@ -162,6 +165,21 @@
             
   <div class="section" id="arrays">
 <h1>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="indexed-arrays">
+<h2>Indexed Arrays<a class="headerlink" href="#indexed-arrays" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$firstType</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;charles&quot;</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="s2">&quot;Array&quot;</span><span class="p">);</span>
+<span class="nv">$secondType</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;charles&quot;</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="s2">&quot;Array&quot;</span><span class="p">];</span>
+<span class="nv">$allValues</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="k">true</span><span class="p">];</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$firstType</span><span class="p">);</span>
+<span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$secondType</span><span class="p">);</span>
+<span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$allValues</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
