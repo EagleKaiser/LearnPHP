@@ -21,9 +21,9 @@ Welcome to LearnPHP's documentation!
    GeneralTypes
    Functions
    Strings
-   Arrays   
+   Arrays  
+   ClassesAndObjects 
    ControlStructure
-   ClassesAndObjects
    WebProgramming
    Databases
 

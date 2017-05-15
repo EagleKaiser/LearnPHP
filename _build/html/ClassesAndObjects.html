@@ -36,8 +36,8 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="LearnPHP  documentation" href="index.html"/>
-        <link rel="next" title="Web Programming" href="WebProgramming.html"/>
-        <link rel="prev" title="Control Structure" href="ControlStructure.html"/> 
+        <link rel="next" title="Control Structure" href="ControlStructure.html"/>
+        <link rel="prev" title="Arrays" href="Arrays.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -93,8 +93,19 @@
 <li class="toctree-l1"><a class="reference internal" href="Functions.html">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Strings.html">Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Arrays.html">Arrays</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Classess &amp; Objects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-classess">Creating a Classess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-an-object">Creating an Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-properties">Create Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-properties">Accessing Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-constans">Creating Constans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-methods">Creating Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initial-parameters">Initial Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inheritance">Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#protected">Protected</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="ControlStructure.html">Control Structure</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Classess &amp; Objects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="WebProgramming.html">Web Programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Databases.html">Databases</a></li>
 </ul>
@@ -162,6 +173,295 @@
             
   <div class="section" id="classess-objects">
 <h1>Classess &amp; Objects<a class="headerlink" href="#classess-objects" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="creating-a-classess">
+<h2>Creating a Classess<a class="headerlink" href="#creating-a-classess" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-an-object">
+<h2>Creating an Object<a class="headerlink" href="#creating-an-object" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+<span class="p">}</span>
+<span class="nv">$myObject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">();</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-properties">
+<h2>Create Properties<a class="headerlink" href="#create-properties" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$firstName</span> <span class="o">=</span> <span class="s2">&quot;Samel&quot;</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$lastName</span> <span class="o">=</span> <span class="s2">&quot;Clemens&quot;</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$yearBorn</span> <span class="o">=</span> <span class="s2">&quot;1988;</span>
+<span class="s2">}</span>
+<span class="si">$myObject</span><span class="s2"> = new Person();</span>
+<span class="s2">?&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="accessing-properties">
+<h2>Accessing Properties<a class="headerlink" href="#accessing-properties" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$firstName</span> <span class="o">=</span> <span class="s2">&quot;Samel&quot;</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$lastName</span> <span class="o">=</span> <span class="s2">&quot;Clemens&quot;</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$yearBorn</span> <span class="o">=</span> <span class="s2">&quot;1988&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nv">$myObject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nv">$myObject</span><span class="o">-&gt;</span><span class="na">firstName</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="nv">$myObject</span><span class="o">-&gt;</span><span class="na">firstName</span> <span class="o">=</span> <span class="s2">&quot;S.L&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$myObject</span><span class="o">-&gt;</span><span class="na">firstName</span><span class="p">;</span>
+<span class="c1">//output:</span>
+<span class="c1">//Samel</span>
+<span class="c1">//S.L</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">we don&#8217;t use $ to access the properties values</p>
+</div>
+</div>
+<div class="section" id="creating-constans">
+<h2>Creating Constans<a class="headerlink" href="#creating-constans" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="no">AVG_LIFE_SPAN</span> <span class="o">=</span> <span class="mi">79</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$firstName</span> <span class="o">=</span> <span class="s2">&quot;Samel&quot;</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$lastName</span> <span class="o">=</span> <span class="s2">&quot;Clemens&quot;</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$yearBorn</span> <span class="o">=</span> <span class="s2">&quot;1988&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nv">$myObject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nv">$myObject</span><span class="o">::</span><span class="na">AVG_LIFE_SPAN</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nx">Person</span><span class="o">::</span><span class="na">AVG_LIFE_SPAN</span><span class="p">;</span>
+<span class="c1">//output</span>
+<span class="c1">//79</span>
+<span class="c1">//79</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">we can access constant value by using the object of the class or the class itself</p>
+</div>
+</div>
+<div class="section" id="creating-methods">
+<h2>Creating Methods<a class="headerlink" href="#creating-methods" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+ <span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="no">AVG_LIFE_SPAN</span> <span class="o">=</span> <span class="mi">79</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$firstName</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$lastNamens</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$yearBorn</span><span class="p">;</span>
+
+    <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;I&#39;m in the constructor&quot;</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span> <span class="o">=</span> <span class="s2">&quot;Samel&quot;</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lastName</span> <span class="o">=</span> <span class="s2">&quot;Clemens&quot;</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">yearBorn</span> <span class="o">=</span> <span class="s2">&quot;1988&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getFirstName</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setFirstName</span><span class="p">(</span><span class="nv">$tempName</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span> <span class="o">=</span> <span class="nv">$tempName</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nv">$myObject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nv">$myObject</span><span class="o">-&gt;</span><span class="na">getFirstName</span><span class="p">()</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$myObject</span><span class="o">-&gt;</span><span class="na">getFirstName</span><span class="p">()</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="nv">$myObject</span><span class="o">-&gt;</span><span class="na">setFirstName</span><span class="p">(</span><span class="s2">&quot;Sam&quot;</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$myObject</span><span class="o">-&gt;</span><span class="na">getFirstName</span><span class="p">();</span>
+<span class="c1">//I&#39;m in the constructorSamel</span>
+<span class="c1">//Samel</span>
+<span class="c1">//Sam</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>A constructor will execute when creating a new object</li>
+<li>A conststructor is created by using function __construct(){}</li>
+</ul>
+</div>
+</div>
+<div class="section" id="initial-parameters">
+<h2>Initial Parameters<a class="headerlink" href="#initial-parameters" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+ <span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="no">AVG_LIFE_SPAN</span> <span class="o">=</span> <span class="mi">79</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$firstName</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$lastNamens</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$yearBorn</span><span class="p">;</span>
+    <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$tempFirst</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nv">$tempLast</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nv">$tempBorn</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span> <span class="o">=</span> <span class="nv">$tempFirst</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lastName</span> <span class="o">=</span> <span class="nv">$tempLast</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">yearBorn</span> <span class="o">=</span> <span class="nv">$tempBorn</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getFirstName</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setFirstName</span><span class="p">(</span><span class="nv">$tempName</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span> <span class="o">=</span> <span class="nv">$tempName</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nv">$myObject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">&quot;Samuel Langhorne&quot;</span><span class="p">,</span> <span class="s2">&quot;Clemens&quot;</span><span class="p">,</span> <span class="mi">1899</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$myObject</span><span class="o">-&gt;</span><span class="na">getFirstName</span><span class="p">();</span>
+<span class="c1">//output:</span>
+<span class="c1">//Samuel Langhorne</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Initializing parameters of the constructor prevent an error from happinnig if no parameters were givin</p>
+</div>
+</div>
+<div class="section" id="inheritance">
+<h2>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+ <span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="no">AVG_LIFE_SPAN</span> <span class="o">=</span> <span class="mi">79</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$firstName</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$lastNamens</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$yearBorn</span><span class="p">;</span>
+    <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$tempFirst</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nv">$tempLast</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nv">$tempBorn</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;Person Constructor&lt;br&gt;&quot;</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span> <span class="o">=</span> <span class="nv">$tempFirst</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lastName</span> <span class="o">=</span> <span class="nv">$tempLast</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">yearBorn</span> <span class="o">=</span> <span class="nv">$tempBorn</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getFirstName</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setFirstName</span><span class="p">(</span><span class="nv">$tempName</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span> <span class="o">=</span> <span class="nv">$tempName</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getFullName</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;Person-&gt;getFullName()&lt;br&gt;&quot;</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span><span class="o">.</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lastName</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">class</span> <span class="nc">Author</span> <span class="k">extends</span> <span class="nx">Person</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$penName</span> <span class="o">=</span> <span class="s2">&quot;Mark Twain&quot;</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getPenName</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">penName</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">//child methods with same name will overide parents method</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getFullName</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;Author-&gt;getFullName()&lt;br&gt;&quot;</span><span class="p">;</span>
+        <span class="c1">//firstName and lastName are parents attriputes that child can access</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span><span class="o">.</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lastName</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">//Author will access parent method getFullName()</span>
+<span class="nv">$newAuthor</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Author</span><span class="p">(</span><span class="s2">&quot;Samuel Langhorne&quot;</span><span class="p">,</span> <span class="s2">&quot;Clemns&quot;</span><span class="p">,</span> <span class="mi">1899</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$newAuthor</span><span class="o">-&gt;</span><span class="na">getFullName</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nv">$newAuthor</span><span class="o">-&gt;</span><span class="na">getPenName</span><span class="p">();</span>
+<span class="c1">//output</span>
+<span class="c1">//Person Constructor</span>
+<span class="c1">//Author-&gt;getFullName()</span>
+<span class="c1">//Samuel Langhorne Clemns</span>
+<span class="c1">//Mark Twain</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If we comment child function getFullName() output will be Person-&gt;getFullName()</p>
+</div>
+</div>
+<div class="section" id="protected">
+<h2>Protected<a class="headerlink" href="#protected" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+ <span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="no">AVG_LIFE_SPAN</span> <span class="o">=</span> <span class="mi">79</span><span class="p">;</span>
+    <span class="k">protected</span> <span class="nv">$firstName</span><span class="p">;</span>
+    <span class="k">protected</span> <span class="nv">$lastNamens</span><span class="p">;</span>
+    <span class="k">protected</span> <span class="nv">$yearBorn</span><span class="p">;</span>
+    <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$tempFirst</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nv">$tempLast</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nv">$tempBorn</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;Person Constructor&lt;br&gt;&quot;</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span> <span class="o">=</span> <span class="nv">$tempFirst</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lastName</span> <span class="o">=</span> <span class="nv">$tempLast</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">yearBorn</span> <span class="o">=</span> <span class="nv">$tempBorn</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">getFirstName</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">setFirstName</span><span class="p">(</span><span class="nv">$tempName</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span> <span class="o">=</span> <span class="nv">$tempName</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">getFullName</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;Person-&gt;getFullName()&lt;br&gt;&quot;</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span><span class="o">.</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lastName</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">class</span> <span class="nc">Author</span> <span class="k">extends</span> <span class="nx">Person</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$penName</span> <span class="o">=</span> <span class="s2">&quot;Mark Twain&quot;</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getPenName</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">penName</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getFullName</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;Author-&gt;getCompleteName()&lt;br&gt;&quot;</span><span class="p">;</span>
+        <span class="c1">//access protected properties through this public method</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span><span class="o">.</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lastName</span><span class="o">.</span><span class="s2">&quot;a.k.a. &quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">penName</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nv">$newAuthor</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Author</span><span class="p">(</span><span class="s2">&quot;Samuel Langhorne&quot;</span><span class="p">,</span> <span class="s2">&quot;Clemns&quot;</span><span class="p">,</span> <span class="mi">1899</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$newAuthor</span><span class="o">-&gt;</span><span class="na">getFullName</span><span class="p">();</span>
+<span class="c1">//output</span>
+<span class="c1">//Person Constructor</span>
+<span class="c1">//Author-&gt;getCompleteNme()</span>
+<span class="c1">//Samuel Langhorne Clemnsa.k.a. Mark Twain</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>we can&#8217;t access protected properties or functions, trying to will through a fatal error</li>
+<li>We can access protected properties through public methods</li>
+</ul>
+</div>
+</div>
 </div>
 
 
@@ -174,10 +474,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="WebProgramming.html" class="btn btn-neutral float-right" title="Web Programming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ControlStructure.html" class="btn btn-neutral float-right" title="Control Structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ControlStructure.html" class="btn btn-neutral" title="Control Structure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Arrays.html" class="btn btn-neutral" title="Arrays" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
