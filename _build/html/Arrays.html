@@ -99,6 +99,16 @@
 <li class="toctree-l2"><a class="reference internal" href="#in-array">in_array()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#array-push">array_push()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#aray-pop-remove-lase-item">aray_pop (remove lase item)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unset-delete-arrray-or-element-from-array">unset (delete arrray or element from array)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sorting-arrays">Sorting Arrays</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sort">sort()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#asort">asort()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ksort">ksort()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#count">count()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#foreach">foreach()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multi-dimentional-array">Multi dimentional array</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ControlStructure.html">Control Structure</a></li>
@@ -272,12 +282,203 @@
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="nv">$authors</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;charles&quot;</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="s2">&quot;Array&quot;</span><span class="p">);</span>
 <span class="nv">$lastValue</span> <span class="o">=</span> <span class="nb">array_pop</span><span class="p">(</span><span class="nv">$authors</span><span class="p">);</span>
-<span class="k">echo</span> <span class="nv">$lastValue</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$lastValue</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
 <span class="nb">print_r</span><span class="p">(</span><span class="nv">$authors</span><span class="p">);</span>
 <span class="c1">//output:</span>
-<span class="c1">//ArrayArray ( [0] =&gt; charles [1] =&gt; hello [2] =&gt; world )</span>
+<span class="c1">//Array</span>
+<span class="c1">//Array ( [0] =&gt; charles [1] =&gt; hello [2] =&gt; world )</span>
 <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="unset-delete-arrray-or-element-from-array">
+<h2>unset (delete arrray or element from array)<a class="headerlink" href="#unset-delete-arrray-or-element-from-array" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$first</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;charles&quot;</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="s2">&quot;Array&quot;</span><span class="p">);</span>
+<span class="nv">$second</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+<span class="s2">&quot;quarky&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Charles Dickens&quot;</span><span class="p">,</span>
+<span class="s2">&quot;brilliant&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Jane&quot;</span><span class="p">,</span>
+<span class="s2">&quot;poetic&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;William&quot;</span><span class="p">,</span>
+<span class="s2">&quot;Mark Twain&quot;</span>
+<span class="p">);</span>
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$first</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nv">$first</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$second</span><span class="p">[</span><span class="nx">brilliant</span><span class="p">]);</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$first</span><span class="p">);</span>
+<span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$first</span><span class="p">);</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$first</span><span class="p">);</span>
+<span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$second</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sorting-arrays">
+<h2>Sorting Arrays<a class="headerlink" href="#sorting-arrays" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sort">
+<h3>sort()<a class="headerlink" href="#sort" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$first</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;charles&quot;</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="s2">&quot;Array&quot;</span><span class="p">);</span>
+<span class="nv">$second</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+<span class="s2">&quot;quarky&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Charles Dickens&quot;</span><span class="p">,</span>
+<span class="s2">&quot;brilliant&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Jane&quot;</span><span class="p">,</span>
+<span class="s2">&quot;poetic&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;William&quot;</span><span class="p">,</span>
+<span class="s2">&quot;Mark Twain&quot;</span>
+<span class="p">);</span>
+<span class="nb">sort</span><span class="p">(</span><span class="nv">$first</span><span class="p">);</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$first</span><span class="p">);</span>
+<span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="nb">sort</span><span class="p">(</span><span class="nv">$second</span><span class="p">);</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$second</span><span class="p">);</span>
+<span class="c1">//output:</span>
+<span class="c1">//Array ( [0] =&gt; Array [1] =&gt; charles [2] =&gt; hello [3] =&gt; world )</span>
+<span class="c1">//Array ( [0] =&gt; Charles Dickens [1] =&gt; Jane [2] =&gt; Mark Twain [3] =&gt; William )</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>index values will be reproduced for the sort results</li>
+<li>by using sort in an associative array all associative key values will be changed int indexed value</li>
+</ul>
+</div>
+</div>
+<div class="section" id="asort">
+<h3>asort()<a class="headerlink" href="#asort" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$first</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;charles&quot;</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="s2">&quot;Array&quot;</span><span class="p">);</span>
+<span class="nv">$second</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+<span class="s2">&quot;quarky&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Charles Dickens&quot;</span><span class="p">,</span>
+<span class="s2">&quot;brilliant&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Jane&quot;</span><span class="p">,</span>
+<span class="s2">&quot;poetic&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;William&quot;</span><span class="p">,</span>
+<span class="s2">&quot;Mark Twain&quot;</span>
+<span class="p">);</span>
+<span class="nb">asort</span><span class="p">(</span><span class="nv">$first</span><span class="p">);</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$first</span><span class="p">);</span>
+<span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="nb">asort</span><span class="p">(</span><span class="nv">$second</span><span class="p">);</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$second</span><span class="p">);</span>
+<span class="c1">//output:</span>
+<span class="c1">////Array ( [3] =&gt; Array [0] =&gt; charles [1] =&gt; hello [2] =&gt; world )</span>
+<span class="c1">//Array ( [quarky] =&gt; Charles Dickens [brilliant] =&gt; Jane [0] =&gt; Mark Twain [poetic] =&gt; William )</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">asort preserve original indexes and association array_key_exists</p>
+</div>
+</div>
+<div class="section" id="ksort">
+<h3>ksort()<a class="headerlink" href="#ksort" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$second</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+<span class="s2">&quot;quarky&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Charles Dickens&quot;</span><span class="p">,</span>
+<span class="s2">&quot;brilliant&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Jane&quot;</span><span class="p">,</span>
+<span class="s2">&quot;poetic&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;William&quot;</span><span class="p">,</span>
+<span class="s2">&quot;Mark Twain&quot;</span>
+<span class="p">);</span>
+<span class="nb">ksort</span><span class="p">(</span><span class="nv">$second</span><span class="p">);</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$second</span><span class="p">);</span>
+<span class="c1">//output:</span>
+<span class="c1">//Array ( [brilliant] =&gt; Jane [poetic] =&gt; William [quarky] =&gt; Charles Dickens [0] =&gt; Mark Twain )</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">ksort will sort based on the index and associative key values</p>
+</div>
+</div>
+</div>
+<div class="section" id="count">
+<h2>count()<a class="headerlink" href="#count" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$first</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;charles&quot;</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="s2">&quot;Array&quot;</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$first</span><span class="p">)</span><span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="nv">$authors2</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;Male&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s2">&quot;Charles&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;Christmas Carol&quot;</span><span class="p">,</span> <span class="s2">&quot;Oliver Twist&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;William&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;Romeo &amp; Juliet&quot;</span><span class="p">,</span> <span class="s2">&quot;Richard III&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;Mark Twain&quot;</span> <span class="o">=&gt;</span> <span class="k">Array</span><span class="p">(</span><span class="s2">&quot;Tom Sawyer&quot;</span><span class="p">,</span> <span class="s2">&quot;Huck Finn&quot;</span><span class="p">)</span>
+            <span class="p">),</span>
+        <span class="s2">&quot;Female&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s2">&quot;L. M. Montgomery&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;Anne of Green&quot;</span><span class="p">,</span> <span class="s2">&quot;Anne of Avolea&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;Louisa May&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;Litle Women&quot;</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">];</span>
+<span class="k">echo</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$authors2</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$authors2</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="c1">//output:</span>
+<span class="c1">//4</span>
+<span class="c1">//2</span>
+<span class="c1">//16</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In multi dimentional arrays we can use 1 or COUNT_RECURSIVE as a second parameter to count all alements of the arrays</p>
+</div>
+</div>
+<div class="section" id="foreach">
+<h2>foreach()<a class="headerlink" href="#foreach" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$second</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+<span class="s2">&quot;quarky&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Charles Dickens&quot;</span><span class="p">,</span>
+<span class="s2">&quot;brilliant&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Jane&quot;</span><span class="p">,</span>
+<span class="s2">&quot;poetic&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;William&quot;</span><span class="p">,</span>
+<span class="s2">&quot;Mark Twain&quot;</span>
+<span class="p">);</span>
+<span class="k">foreach</span><span class="p">(</span><span class="nv">$authors</span> <span class="k">as</span> <span class="nv">$val</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">echo</span> <span class="nv">$val</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">foreach</span><span class="p">(</span><span class="nv">$authors</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$val</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">echo</span> <span class="nv">$val</span><span class="o">.</span><span class="s2">&quot;(&quot;</span><span class="o">.</span><span class="nv">$key</span><span class="o">.</span><span class="s2">&quot;)&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">//output:</span>
+<span class="c1">//Charles Dickens</span>
+<span class="c1">//Jane</span>
+<span class="c1">//William</span>
+<span class="c1">//Mark Twain</span>
+<span class="c1">//Charles Dickens(quarky)</span>
+<span class="c1">//Jane(brilliant)</span>
+<span class="c1">//William(poetic)</span>
+<span class="c1">//Mark Twain(0)</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">$key and $val are temporary variables</p>
+</div>
+</div>
+<div class="section" id="multi-dimentional-array">
+<h2>Multi dimentional array<a class="headerlink" href="#multi-dimentional-array" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$authors2</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;Male&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s2">&quot;Charles&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;Christmas Carol&quot;</span><span class="p">,</span> <span class="s2">&quot;Oliver Twist&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;William&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;Romeo &amp; Juliet&quot;</span><span class="p">,</span> <span class="s2">&quot;Richard III&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;Mark Twain&quot;</span> <span class="o">=&gt;</span> <span class="k">Array</span><span class="p">(</span><span class="s2">&quot;Tom Sawyer&quot;</span><span class="p">,</span> <span class="s2">&quot;Huck Finn&quot;</span><span class="p">)</span>
+            <span class="p">),</span>
+        <span class="s2">&quot;Female&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s2">&quot;L. M. Montgomery&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;Anne of Green&quot;</span><span class="p">,</span> <span class="s2">&quot;Anne of Avolea&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;Louisa May&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;Litle Women&quot;</span><span class="p">)</span>
+            <span class="p">)</span>
+<span class="p">];</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$authors2</span><span class="p">[</span><span class="s1">&#39;Male&#39;</span><span class="p">][</span><span class="s1">&#39;Mark Twain&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span>
+<span class="c1">//output</span>
+<span class="c1">//Huck Finn</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Remove [] parameters to print previous level</p>
 </div>
 </div>
 </div>

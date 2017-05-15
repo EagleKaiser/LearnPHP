@@ -120,6 +120,192 @@ unset (delete arrray or element from array)
 .. code-block:: php
 
     <?php
-    $authors = array("charles", "hello", "world", "Array");
-    unset($authors[1], $authors[0]
+    $first = array("charles", "hello", "world", "Array");
+    $second = array(
+    "quarky" => "Charles Dickens",
+    "brilliant" => "Jane",
+    "poetic" => "William",
+    "Mark Twain"
+    );
+    unset($first[1], $first[0]);
+    unset($second[brilliant]);
+    print_r($first);
+    echo "<br>";
+    unset($first);
+    print_r($first);
+    echo "<br>";
+    print_r($second);    
     ?>
+
+Sorting Arrays
+--------------
+
+sort()
+~~~~~~
+
+.. code-block:: php
+
+    <?php
+    $first = array("charles", "hello", "world", "Array");
+    $second = array(
+    "quarky" => "Charles Dickens",
+    "brilliant" => "Jane",
+    "poetic" => "William",
+    "Mark Twain"
+    );
+    sort($first);
+    print_r($first);
+    echo "<br>";
+    sort($second);
+    print_r($second);
+    //output: 
+    //Array ( [0] => Array [1] => charles [2] => hello [3] => world ) 
+    //Array ( [0] => Charles Dickens [1] => Jane [2] => Mark Twain [3] => William ) 
+    ?>
+
+.. note:: 
+
+    * index values will be reproduced for the sort results
+    * by using sort in an associative array all associative key values will be changed int indexed value
+
+asort()
+~~~~~~~
+
+.. code-block:: php
+
+    <?php
+    $first = array("charles", "hello", "world", "Array");
+    $second = array(
+    "quarky" => "Charles Dickens",
+    "brilliant" => "Jane",
+    "poetic" => "William",
+    "Mark Twain"
+    );
+    asort($first);
+    print_r($first);
+    echo "<br>";
+    asort($second);
+    print_r($second);
+    //output:
+    ////Array ( [3] => Array [0] => charles [1] => hello [2] => world ) 
+    //Array ( [quarky] => Charles Dickens [brilliant] => Jane [0] => Mark Twain [poetic] => William ) 
+    ?>
+
+.. note:: 
+
+    asort preserve original indexes and association array_key_exists
+
+ksort()
+~~~~~~~
+
+.. code-block:: php
+
+    <?php
+    $second = array(
+    "quarky" => "Charles Dickens",
+    "brilliant" => "Jane",
+    "poetic" => "William",
+    "Mark Twain"
+    );
+    ksort($second);
+    print_r($second);
+    //output:
+    //Array ( [brilliant] => Jane [poetic] => William [quarky] => Charles Dickens [0] => Mark Twain ) 
+    ?>
+
+.. note:: 
+
+    ksort will sort based on the index and associative key values
+
+count()
+-------
+
+.. code-block:: php
+
+    <?php
+    $first = array("charles", "hello", "world", "Array");
+    echo count($first). "<br>";
+    $authors2 = [
+            "Male" => array(
+                "Charles" => array("Christmas Carol", "Oliver Twist"),
+                "William" => array("Romeo & Juliet", "Richard III"),
+                "Mark Twain" => Array("Tom Sawyer", "Huck Finn")
+                ),
+            "Female" => array(
+                "L. M. Montgomery" => array("Anne of Green", "Anne of Avolea"),
+                "Louisa May" => array("Litle Women")
+                )
+            ];
+    echo count($authors2)."<br>";
+    echo count($authors2, 1); 
+    //output:
+    //4
+    //2
+    //16
+    ?>
+
+.. note:: 
+
+    In multi dimentional arrays we can use 1 or COUNT_RECURSIVE as a second parameter to count all alements of the arrays
+
+foreach()
+---------
+
+.. code-block:: php
+
+    <?php
+    $second = array(
+    "quarky" => "Charles Dickens",
+    "brilliant" => "Jane",
+    "poetic" => "William",
+    "Mark Twain"
+    );
+    foreach($authors as $val)
+    {
+        echo $val."<br>";
+    }
+    foreach($authors as $key => $val)
+    {
+        echo $val."(".$key.")<br>";
+    }
+    //output:
+    //Charles Dickens
+    //Jane
+    //William
+    //Mark Twain
+    //Charles Dickens(quarky)
+    //Jane(brilliant)
+    //William(poetic)
+    //Mark Twain(0)
+    ?>
+
+.. note:: 
+
+    $key and $val are temporary variables
+
+Multi dimentional array
+-----------------------
+
+.. code-block:: php
+
+    <?php
+    $authors2 = [
+            "Male" => array(
+                "Charles" => array("Christmas Carol", "Oliver Twist"),
+                "William" => array("Romeo & Juliet", "Richard III"),
+                "Mark Twain" => Array("Tom Sawyer", "Huck Finn")
+                ),
+            "Female" => array(
+                "L. M. Montgomery" => array("Anne of Green", "Anne of Avolea"),
+                "Louisa May" => array("Litle Women")
+                )
+    ];
+    print_r($authors2['Male']['Mark Twain'][1]);
+    //output
+    //Huck Finn
+    ?>
+    
+.. note:: 
+
+    Remove [] parameters to print previous level
+
