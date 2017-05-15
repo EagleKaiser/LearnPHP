@@ -293,4 +293,4 @@ Protected
 .. note:: 
 
     * we can't access protected properties or functions, trying to will through a fatal error
-    * We can access protected properties through public methods 
+    * We can access protected properties and methods through public methods 
