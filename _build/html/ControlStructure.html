@@ -36,7 +36,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="LearnPHP  documentation" href="index.html"/>
-        <link rel="next" title="Web Programming" href="WebProgramming.html"/>
+        <link rel="next" title="Databases" href="Databases.html"/>
         <link rel="prev" title="Classess &amp; Objects" href="ClassesAndObjects.html"/> 
 
   
@@ -94,9 +94,26 @@
 <li class="toctree-l1"><a class="reference internal" href="Strings.html">Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Arrays.html">Arrays</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ClassesAndObjects.html">Classess &amp; Objects</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Control Structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WebProgramming.html">Web Programming</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Control Structure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#arithmetic-operators">Arithmetic Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#incrementing-decrementing">Incrementing/Decrementing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#assignment-operators">Assignment Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#string-operators">String Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#comparison-operators">Comparison Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spaceship-operator">Spaceship Operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logical-operators">Logical Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#if-statement">If Statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#else-if-statement">Else if Statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#switch-statement">Switch Statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tenary-operator">Tenary Operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#null-coalesce">Null Coalesce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#while-loop">While Loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#for-loop">For Loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#alternate-syntax">Alternate syntax</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Databases.html">Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WebProgramming.html">Web Programming</a></li>
 </ul>
 
             
@@ -162,6 +179,274 @@
             
   <div class="section" id="control-structure">
 <h1>Control Structure<a class="headerlink" href="#control-structure" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="arithmetic-operators">
+<h2>Arithmetic Operators<a class="headerlink" href="#arithmetic-operators" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">echo</span> <span class="mi">8</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span>
+<span class="k">echo</span> <span class="mi">8</span> <span class="o">-</span> <span class="mi">3</span><span class="p">;</span>
+<span class="k">echo</span> <span class="mi">8</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span>
+<span class="k">echo</span> <span class="mi">8</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
+<span class="k">echo</span> <span class="mi">8</span> <span class="o">%</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">//modulus</span>
+<span class="k">echo</span> <span class="mi">4</span> <span class="o">**</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">//exponentiation four to the power 2</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="incrementing-decrementing">
+<h2>Incrementing/Decrementing<a class="headerlink" href="#incrementing-decrementing" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$increment</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$increment</span><span class="o">++.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$increment</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="o">++</span><span class="nv">$increment</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$increment</span><span class="o">--.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$increment</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="o">--</span><span class="nv">$increment</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">//output:</span>
+<span class="x">//2</span>
+<span class="x">//3</span>
+<span class="x">//4</span>
+<span class="x">//4</span>
+<span class="x">//3</span>
+<span class="x">//2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="assignment-operators">
+<h2>Assignment Operators<a class="headerlink" href="#assignment-operators" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$usingSameVar</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="nv">$usingSameVar</span> <span class="o">+=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$usingSameVar</span><span class="p">;</span>
+<span class="c1">//output 8</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="string-operators">
+<h2>String Operators<a class="headerlink" href="#string-operators" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$concat</span> <span class="o">=</span> <span class="s2">&quot;william&quot;</span><span class="p">;</span>
+<span class="nv">$concat</span> <span class="o">.=</span> <span class="s2">&quot; shakespear&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$concat</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="comparison-operators">
+<h2>Comparison Operators<a class="headerlink" href="#comparison-operators" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="mi">8</span><span class="o">==</span><span class="mi">8</span><span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="mi">8</span><span class="o">===</span><span class="s2">&quot;8&quot;</span><span class="p">);</span> <span class="c1">//Identicle -type and value</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="mi">7</span> <span class="o">&lt;&gt;</span> <span class="mi">8</span><span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="mi">7</span> <span class="o">!=</span> <span class="mi">8</span><span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="mi">7</span> <span class="o">!==</span> <span class="s2">&quot;8&quot;</span><span class="p">);</span> <span class="c1">//not identicle -type or value</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="mi">7</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="mi">7</span> <span class="o">&gt;=</span> <span class="mi">7</span><span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="mi">7</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="mi">7</span> <span class="o">&gt;=</span> <span class="mi">6</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="spaceship-operator">
+<h2>Spaceship Operator<a class="headerlink" href="#spaceship-operator" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">echo</span> <span class="mi">1</span> <span class="o">&lt;=&gt;</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">echo</span> <span class="mi">1</span> <span class="o">&lt;=&gt;</span> <span class="mi">2</span><span class="p">;</span>
+<span class="k">echo</span> <span class="mi">2</span> <span class="o">&lt;=&gt;</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">output</span> <span class="mi">0</span><span class="o">-</span><span class="mi">11</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="logical-operators">
+<h2>Logical Operators<a class="headerlink" href="#logical-operators" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$var1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">);</span>
+<span class="nv">$var2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span> <span class="o">==</span><span class="mi">8</span><span class="p">);</span>
+
+<span class="nv">$var3</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="nv">$var4</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$var1</span><span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$var2</span><span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$var3</span> <span class="o">&amp;&amp;</span> <span class="nv">$var4</span><span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="o">!</span><span class="nv">$var4</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="if-statement">
+<h2>If Statement<a class="headerlink" href="#if-statement" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$authors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;charles&quot;</span><span class="p">,</span> <span class="s2">&quot;jane&quot;</span><span class="p">,</span> <span class="s2">&quot;William&quot;</span><span class="p">];</span>
+<span class="nv">$count</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$authors</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;there is a total of &quot;</span><span class="o">.</span><span class="nv">$count</span><span class="o">.</span><span class="s2">&quot; authors&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;there are no authors&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">//output: there is a total of 3authors</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="else-if-statement">
+<h2>Else if Statement<a class="headerlink" href="#else-if-statement" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$authors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;charles&quot;</span><span class="p">,</span> <span class="s2">&quot;jane&quot;</span><span class="p">,</span> <span class="s2">&quot;William&quot;</span><span class="p">];</span>
+<span class="nv">$count</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$authors</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$count</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;there is 1 authors&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">elseif</span><span class="p">(</span><span class="nv">$count</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;there is a total of &quot;</span><span class="o">.</span><span class="nv">$count</span><span class="o">.</span><span class="s2">&quot; authors&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;there are no authors&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">//output: there is a total of 3authors</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="switch-statement">
+<h2>Switch Statement<a class="headerlink" href="#switch-statement" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$authors</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="nv">$count</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$authors</span><span class="p">);</span>
+<span class="k">switch</span><span class="p">(</span><span class="nv">$count</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">case</span> <span class="mi">0</span><span class="o">:</span>
+        <span class="k">echo</span> <span class="s2">&quot;there are no authors&quot;</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+        <span class="k">echo</span> <span class="s2">&quot;there is 1 authors&quot;</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">default</span><span class="o">:</span>
+        <span class="k">echo</span> <span class="s2">&quot;there is a total of &quot;</span><span class="o">.</span><span class="nv">$count</span><span class="o">.</span><span class="s2">&quot; authors&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Without using break other cases after the correct case will be executed</p>
+</div>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">switch</span> <span class="p">(</span><span class="mi">5</span> <span class="o">&lt;=&gt;</span><span class="mi">7</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+        <span class="k">echo</span> <span class="s2">&quot;greater than&quot;</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="mi">0</span><span class="o">:</span>
+        <span class="k">echo</span> <span class="s2">&quot;equal&quot;</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="o">-</span><span class="mi">1</span><span class="o">:</span>
+        <span class="k">echo</span> <span class="s2">&quot;less than&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tenary-operator">
+<h2>Tenary Operator<a class="headerlink" href="#tenary-operator" title="Permalink to this headline">¶</a></h2>
+<p>(exp1)?(espr2):(expr3)</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$authors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;charles&quot;</span><span class="p">,</span> <span class="s2">&quot;jane&quot;</span><span class="p">,</span> <span class="s2">&quot;William&quot;</span><span class="p">];</span>
+<span class="nv">$count</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$authors</span><span class="p">);</span>
+<span class="nv">$outcome</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">?</span> <span class="s2">&quot;Author Total: &quot;</span><span class="o">.</span><span class="nv">$count</span> <span class="o">:</span> <span class="s2">&quot;noAuthors&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$outcome</span><span class="p">;</span>
+<span class="c1">//output: Author Total: 3</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="null-coalesce">
+<h2>Null Coalesce<a class="headerlink" href="#null-coalesce" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$authors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;charles&quot;</span><span class="p">,</span> <span class="s2">&quot;jane&quot;</span><span class="p">,</span> <span class="s2">&quot;William&quot;</span><span class="p">];</span>
+<span class="nv">$count</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$authors</span><span class="p">);</span>
+<span class="nv">$outcome</span> <span class="o">=</span> <span class="nv">$count</span> <span class="o">?</span> <span class="nv">$count</span> <span class="o">:</span> <span class="s2">&quot;Count unavailable&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;;</span>
+<span class="si">$outcome</span><span class="s2"> = </span><span class="si">$count</span><span class="s2"> ?? &quot;</span><span class="nb">count</span> <span class="nx">unavailable</span><span class="s2">&quot;;</span>
+<span class="s2">echo </span><span class="si">$outcome</span><span class="s2">;</span>
+<span class="s2">//output:</span>
+<span class="s2">//3</span>
+<span class="s2">//3</span>
+<span class="s2">?&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The second outcome will return itself if valid else it will return count unavailable</p>
+</div>
+</div>
+<div class="section" id="while-loop">
+<h2>While Loop<a class="headerlink" href="#while-loop" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$readingIsFun</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span><span class="p">(</span><span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;reading is fun&quot;</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+    <span class="nv">$i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="for-loop">
+<h2>For Loop<a class="headerlink" href="#for-loop" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">for</span><span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;Reading is fun&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="alternate-syntax">
+<h2>Alternate syntax<a class="headerlink" href="#alternate-syntax" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$readingIsFun</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="nv">$authors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;charles&quot;</span><span class="p">,</span> <span class="s2">&quot;jane&quot;</span><span class="p">,</span> <span class="s2">&quot;William&quot;</span><span class="p">];</span>
+<span class="nv">$count</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$authors</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nv">$count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">:</span>
+    <span class="k">echo</span> <span class="s2">&quot;there is a total of &quot;</span><span class="o">.</span><span class="nv">$count</span><span class="o">.</span><span class="s2">&quot; authors&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">else</span> <span class="o">:</span>
+    <span class="k">echo</span> <span class="s2">&quot;there are no authors&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">endif</span><span class="p">;</span>
+
+<span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span><span class="p">(</span><span class="nv">$readingIsFun</span><span class="p">)</span> <span class="o">:</span>
+    <span class="k">echo</span> <span class="s2">&quot;reading is fun&quot;</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+    <span class="nv">$readingIsFun</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+<span class="k">endwhile</span><span class="p">;</span>
+
+<span class="k">for</span><span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="o">:</span>
+    <span class="k">echo</span> <span class="s2">&quot;Reading is fun&quot;</span><span class="p">;</span>
+<span class="k">endfor</span>
+<span class="c1">//output:</span>
+<span class="c1">//there is a total of 3 authors</span>
+<span class="c1">//reading is fun</span>
+<span class="c1">//Reading is funReading is funReading is funReading is funReading is fun</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -174,7 +459,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="WebProgramming.html" class="btn btn-neutral float-right" title="Web Programming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Databases.html" class="btn btn-neutral float-right" title="Databases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="ClassesAndObjects.html" class="btn btn-neutral" title="Classess &amp; Objects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

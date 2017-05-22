@@ -234,9 +234,70 @@ Inheritance
 
     If we comment child function getFullName() output will be Person->getFullName()
 
-Protected
----------
+Public, Protected and private
+-----------------------------
 `php cocumentation for visibility <http://www.php.net/manual/en/language.oop5.visibility.php>`_ 
+
+.. code-block:: php
+
+    <?php
+    /**
+     * Define MyClass
+     */
+    class MyClass
+    {
+        public $public = 'Public';
+        protected $protected = 'Protected';
+        private $private = 'Private';
+
+        function printHello()
+        {
+            echo $this->public;
+            echo $this->protected;
+            echo $this->private;
+        }
+    }
+
+    $obj = new MyClass();
+    echo $obj->public; // Works
+    echo $obj->protected; // Fatal Error
+    echo $obj->private; // Fatal Error
+    $obj->printHello(); // Shows Public, Protected and Private
+
+
+    /**
+     * Define MyClass2
+     */
+    class MyClass2 extends MyClass
+    {
+        // We can redeclare the public and protected properties, but not private
+        public $public = 'Public2';
+        protected $protected = 'Protected2';
+
+        function printHello()
+        {
+            echo $this->public;
+            echo $this->protected;
+            echo $this->private;
+        }
+    }
+
+    $obj2 = new MyClass2();
+    echo $obj2->public; // Works
+    echo $obj2->protected; // Fatal Error
+    echo $obj2->private; // Undefined
+    $obj2->printHello(); // Shows Public2, Protected2, Undefined
+
+    ?> 
+
+.. note:: 
+
+    * public scope to make that variable/function available from anywhere, other classes and instances of the object
+    * protected scope when you want to make your variable/function visible in all classes that extend current class including the parent class
+    * private scope when you want your variable/function to be visible in its own class only
+
+example
+
 
 .. code-block:: php
 
@@ -290,68 +351,43 @@ Protected
     //Samuel Langhorne Clemnsa.k.a. Mark Twain    
     ?>
 
-.. note:: 
-
-    * we can't access protected properties or functions, trying to will through a fatal error
-    * We can access protected properties through public methods 
-    * 
-
-Private
--------
+Static
+------
 
 .. code-block:: php
 
     <?php
-    class Person
+    class Foo
     {
-        const AVG_LIFE_SPAN = 79;
-        private $firstName;
-        private $lastNamens;
-        private $yearBorn;
-        function __construct($tempFirst = "", $tempLast = "", $tempBorn = "")
+        public static $centuryPopular = "19th";
+        public static function getCentury()
         {
-            echo "Person Constructor<br>";
-            $this->firstName = $tempFirst;
-            $this->lastName = $tempLast;
-            $this->yearBorn = $tempBorn;
-        }
-        private function getFirstName()
-        {
-            return $this->firstName;
-        }
-        private function setFirstName($tempName)
-        {
-            $this->firstName = $tempName;
-        }
-        private function getFullName()
-        {
-            echo "Person->getFullName()<br>";
-            return $this->firstName." ".$this->lastName."<br>";
+            return self::$centuryPopular;
         }
     }
-    class Author extends Person
-    {
-        protected $penName = "Mark Twain";
-        public function getPenName()
-        {
-            return $this->penName."<br>";
-        }
-        public function getFullName()
-        {
-            echo "Author->getCompleteName()<br>";
-            //access protected properties through this public method
-            return $this->firstName." ".$this->lastName."a.k.a. ".$this->penName."<br>";
-        }
-    }
-    $newAuthor = new Author("Samuel Langhorne", "Clemns", 1899);
-    echo $newAuthor->getFullName();
-    //output
-    //Person Constructor
-    //Author->getCompleteNme()
-    //Samuel Langhorne Clemnsa.k.a. Mark Twain    
+    echo Foo::$centuryPopular;
+    echo "<br>";
+    echo Foo::getCentury();
     ?>
 
 .. note:: 
 
-    * A private attriputes or method can only be accessed inside of it's class
-    * Pribate cant be access through public methods unlike protected which allow access through public methods
+    * Use self to access static properties inside a class
+    * Use parent to access properties from an ingerited class
+
+Include and Require
+-------------------
+
+.. code-block:: php
+
+    <?php
+    include 'Person.php';
+    include_once 'Authors.php';
+    require 'RandomClass.php';
+    $newAuthor = new Author("sam, "clem", 1889);
+    echo $newAuthor->getCompleteName();
+    ?>
+
+.. note:: 
+
+    * If class does not exist include will continue to run the rest of the script while requre will terminate when it cannot find the necessary file 

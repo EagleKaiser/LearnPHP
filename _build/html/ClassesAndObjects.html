@@ -102,13 +102,14 @@
 <li class="toctree-l2"><a class="reference internal" href="#creating-methods">Creating Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#initial-parameters">Initial Parameters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#inheritance">Inheritance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#protected">Protected</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#private">Private</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#public-protected-and-private">Public, Protected and private</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#static">Static</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#include-and-require">Include and Require</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ControlStructure.html">Control Structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WebProgramming.html">Web Programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Databases.html">Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WebProgramming.html">Web Programming</a></li>
 </ul>
 
             
@@ -401,9 +402,69 @@
 <p class="last">If we comment child function getFullName() output will be Person-&gt;getFullName()</p>
 </div>
 </div>
-<div class="section" id="protected">
-<h2>Protected<a class="headerlink" href="#protected" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="public-protected-and-private">
+<h2>Public, Protected and private<a class="headerlink" href="#public-protected-and-private" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="http://www.php.net/manual/en/language.oop5.visibility.php">php cocumentation for visibility</a></p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * Define MyClass</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">MyClass</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$public </span><span class="o">=</span> <span class="s1">&#39;Public&#39;</span><span class="p">;</span>
+    <span class="k">protected</span> <span class="nv">$protected </span><span class="o">=</span> <span class="s1">&#39;Protected&#39;</span><span class="p">;</span>
+    <span class="k">private</span> <span class="nv">$private </span><span class="o">=</span> <span class="s1">&#39;Private&#39;</span><span class="p">;</span>
+
+    <span class="k">function</span> <span class="nf">printHello</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">public</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">protected</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">private</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nv">$obj </span><span class="o">=</span> <span class="k">new</span> <span class="nx">MyClass</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">public</span><span class="p">;</span> <span class="c1">// Works</span>
+<span class="k">echo</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">protected</span><span class="p">;</span> <span class="c1">// Fatal Error</span>
+<span class="k">echo</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">private</span><span class="p">;</span> <span class="c1">// Fatal Error</span>
+<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">printHello</span><span class="p">();</span> <span class="c1">// Shows Public, Protected and Private</span>
+
+
+<span class="sd">/**</span>
+<span class="sd"> * Define MyClass2</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">MyClass2 extends MyClass</span>
+<span class="p">{</span>
+    <span class="c1">// We can redeclare the public and protected properties, but not private</span>
+    <span class="k">public</span> <span class="nv">$public </span><span class="o">=</span> <span class="s1">&#39;Public2&#39;</span><span class="p">;</span>
+    <span class="k">protected</span> <span class="nv">$protected </span><span class="o">=</span> <span class="s1">&#39;Protected2&#39;</span><span class="p">;</span>
+
+    <span class="k">function</span> <span class="nf">printHello</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">public</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">protected</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">private</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nv">$obj2 </span><span class="o">=</span> <span class="k">new</span> <span class="nx">MyClass2</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nv">$obj2</span><span class="o">-&gt;</span><span class="na">public</span><span class="p">;</span> <span class="c1">// Works</span>
+<span class="k">echo</span> <span class="nv">$obj2</span><span class="o">-&gt;</span><span class="na">protected</span><span class="p">;</span> <span class="c1">// Fatal Error</span>
+<span class="k">echo</span> <span class="nv">$obj2</span><span class="o">-&gt;</span><span class="na">private</span><span class="p">;</span> <span class="c1">// Undefined</span>
+<span class="nv">$obj2</span><span class="o">-&gt;</span><span class="na">printHello</span><span class="p">();</span> <span class="c1">// Shows Public2, Protected2, Undefined</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>public scope to make that variable/function available from anywhere, other classes and instances of the object</li>
+<li>protected scope when you want to make your variable/function visible in all classes that extend current class including the parent class</li>
+<li>private scope when you want your variable/function to be visible in its own class only</li>
+</ul>
+</div>
+<p>example</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
  <span class="k">class</span> <span class="nc">Person</span>
 <span class="p">{</span>
@@ -455,73 +516,47 @@
 <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<ul class="last simple">
-<li>we can&#8217;t access protected properties or functions, trying to will through a fatal error</li>
-<li>We can access protected properties through public methods</li>
-<li></li>
-</ul>
 </div>
-</div>
-<div class="section" id="private">
-<h2>Private<a class="headerlink" href="#private" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="static">
+<h2>Static<a class="headerlink" href="#static" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
-<span class="k">class</span> <span class="nc">Person</span>
+<span class="k">class</span> <span class="nc">Foo</span>
 <span class="p">{</span>
-    <span class="k">const</span> <span class="no">AVG_LIFE_SPAN</span> <span class="o">=</span> <span class="mi">79</span><span class="p">;</span>
-    <span class="k">private</span> <span class="nv">$firstName</span><span class="p">;</span>
-    <span class="k">private</span> <span class="nv">$lastNamens</span><span class="p">;</span>
-    <span class="k">private</span> <span class="nv">$yearBorn</span><span class="p">;</span>
-    <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$tempFirst</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nv">$tempLast</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nv">$tempBorn</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="nv">$centuryPopular</span> <span class="o">=</span> <span class="s2">&quot;19th&quot;</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">getCentury</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="k">echo</span> <span class="s2">&quot;Person Constructor&lt;br&gt;&quot;</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span> <span class="o">=</span> <span class="nv">$tempFirst</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lastName</span> <span class="o">=</span> <span class="nv">$tempLast</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">yearBorn</span> <span class="o">=</span> <span class="nv">$tempBorn</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">private</span> <span class="k">function</span> <span class="nf">getFirstName</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">private</span> <span class="k">function</span> <span class="nf">setFirstName</span><span class="p">(</span><span class="nv">$tempName</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span> <span class="o">=</span> <span class="nv">$tempName</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">private</span> <span class="k">function</span> <span class="nf">getFullName</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="k">echo</span> <span class="s2">&quot;Person-&gt;getFullName()&lt;br&gt;&quot;</span><span class="p">;</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span><span class="o">.</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lastName</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nx">self</span><span class="o">::</span><span class="nv">$centuryPopular</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
-<span class="k">class</span> <span class="nc">Author</span> <span class="k">extends</span> <span class="nx">Person</span>
-<span class="p">{</span>
-    <span class="k">protected</span> <span class="nv">$penName</span> <span class="o">=</span> <span class="s2">&quot;Mark Twain&quot;</span><span class="p">;</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getPenName</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">penName</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getFullName</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="k">echo</span> <span class="s2">&quot;Author-&gt;getCompleteName()&lt;br&gt;&quot;</span><span class="p">;</span>
-        <span class="c1">//access protected properties through this public method</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span><span class="o">.</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lastName</span><span class="o">.</span><span class="s2">&quot;a.k.a. &quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">penName</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="nv">$newAuthor</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Author</span><span class="p">(</span><span class="s2">&quot;Samuel Langhorne&quot;</span><span class="p">,</span> <span class="s2">&quot;Clemns&quot;</span><span class="p">,</span> <span class="mi">1899</span><span class="p">);</span>
-<span class="k">echo</span> <span class="nv">$newAuthor</span><span class="o">-&gt;</span><span class="na">getFullName</span><span class="p">();</span>
-<span class="c1">//output</span>
-<span class="c1">//Person Constructor</span>
-<span class="c1">//Author-&gt;getCompleteNme()</span>
-<span class="c1">//Samuel Langhorne Clemnsa.k.a. Mark Twain</span>
+<span class="k">echo</span> <span class="nx">Foo</span><span class="o">::</span><span class="nv">$centuryPopular</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nx">Foo</span><span class="o">::</span><span class="na">getCentury</span><span class="p">();</span>
 <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <ul class="last simple">
-<li>A private attriputes or method can only be accessed inside of it&#8217;s class</li>
-<li>Pribate cant be access through public methods unlike protected which allow access through public methods</li>
+<li>Use self to access static properties inside a class</li>
+<li>Use parent to access properties from an ingerited class</li>
+</ul>
+</div>
+</div>
+<div class="section" id="include-and-require">
+<h2>Include and Require<a class="headerlink" href="#include-and-require" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">include</span> <span class="s1">&#39;Person.php&#39;</span><span class="p">;</span>
+<span class="k">include_once</span> <span class="s1">&#39;Authors.php&#39;</span><span class="p">;</span>
+<span class="k">require</span> <span class="s1">&#39;RandomClass.php&#39;</span><span class="p">;</span>
+<span class="nv">$newAuthor</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Author</span><span class="p">(</span><span class="s2">&quot;sam, &quot;</span><span class="nx">clem</span><span class="s2">&quot;, 1889);</span>
+<span class="s2">echo </span><span class="si">$newAuthor-&gt;getCompleteName</span><span class="s2">();</span>
+<span class="s2">?&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>If class does not exist include will continue to run the rest of the script while requre will terminate when it cannot find the necessary file</li>
 </ul>
 </div>
 </div>

@@ -36,7 +36,8 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="LearnPHP  documentation" href="index.html"/>
-        <link rel="prev" title="Web Programming" href="WebProgramming.html"/> 
+        <link rel="next" title="Web Programming" href="WebProgramming.html"/>
+        <link rel="prev" title="Control Structure" href="ControlStructure.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -94,8 +95,22 @@
 <li class="toctree-l1"><a class="reference internal" href="Arrays.html">Arrays</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ClassesAndObjects.html">Classess &amp; Objects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ControlStructure.html">Control Structure</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Databases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#supported-databases">Supported Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pdo-vs-mysqli-connection-methods">PDO vs. MySQLi (Connection Methods)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-mysql-in-linux">Setting MySQL in Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-mysql-in-windows">Setting up MySQL in Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-database-and-tables">Creating a Database and Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#executin-a-query">Executin a Query</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#insert-update-or-delete">Insert, Update or DELETE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#select-statement">Select Statement</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#prepared-statement">Prepared Statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pdo-example">PDO Example</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="WebProgramming.html">Web Programming</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Databases</a></li>
 </ul>
 
             
@@ -161,6 +176,265 @@
             
   <div class="section" id="databases">
 <h1>Databases<a class="headerlink" href="#databases" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="supported-databases">
+<h2>Supported Databases<a class="headerlink" href="#supported-databases" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>MongoDB (Document oriented database)</li>
+<li>MS SQL (Microsoft SQL)</li>
+<li>MySQL/MariaDB</li>
+<li>PostgreSQL</li>
+<li>SQLite</li>
+</ul>
+</div>
+<div class="section" id="pdo-vs-mysqli-connection-methods">
+<h2>PDO vs. MySQLi (Connection Methods)<a class="headerlink" href="#pdo-vs-mysqli-connection-methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="41%" />
+<col width="29%" />
+<col width="30%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">PDO</th>
+<th class="head">PDO &amp; MySQL</th>
+<th class="head">MySQLi</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Supports Client-side Prepared Statemnts</td>
+<td>Object-oriented</td>
+<td>Can use Procedural Call</td>
+</tr>
+<tr class="row-odd"><td>Conncts to all the Supported Databases in PHP</td>
+<td>Supports Charsets</td>
+<td>Connects to MySQL, MaxDB, MariaDB</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>Multiple Statements</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Server-side Prepared Statements</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>Stored Procedures</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="setting-mysql-in-linux">
+<h2>Setting MySQL in Linux<a class="headerlink" href="#setting-mysql-in-linux" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo apt-get update</span>
+<span class="go">mysql -V</span>
+<span class="go">sudo apt-get install mysql-server</span>
+<span class="go">sudo apt-get install phpmyadmin</span>
+<span class="go">//select apache2</span>
+<span class="go">//after installation go to localhost/phpmyadmin</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-up-mysql-in-windows">
+<h2>Setting up MySQL in Windows<a class="headerlink" href="#setting-up-mysql-in-windows" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Install <a class="reference external" href="http://www.apachefriends.org">XAMPP</a>  Apache + MariaDB + PHP + Perl</li>
+<li>Main application to choose are php, mysql and phpmyadmin</li>
+<li>after installation is finished change apache port number to 81 by clicking config then search for 80 and change it to 81 (there are two changes)</li>
+<li>Start Apache and mysql services</li>
+<li>In netbeans start new php project</li>
+</ul>
+</div>
+<div class="section" id="creating-a-database-and-tables">
+<h2>Creating a Database and Tables<a class="headerlink" href="#creating-a-database-and-tables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>To access phpmyadmin go to url localhost:81/phpmyadmin</li>
+<li>Create a new user by choosing user accounts-&gt; Add user accounts, type new user name, localhost, password and grant all permisions</li>
+<li>Create a new database, type a name then create</li>
+<li>Create a table, type a table name and choose number of columns</li>
+<li>For primary key choose index-&gt; primary and A_I (auto increment)</li>
+<li>Create a connection object variable (Connect.php)</li>
+<li>If using netbeans create a new php project add port :80 to localhost project location</li>
+<li>change run conffiguration to be (Script (run in command line))</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">//Connect.php</span>
+<span class="cp">&lt;?php</span>
+<span class="nv">$dbPassword</span> <span class="o">=</span> <span class="s2">&quot;eagle&quot;</span><span class="p">;</span>
+<span class="nv">$dbUserName</span> <span class="o">=</span> <span class="s2">&quot;kai&quot;</span><span class="p">;</span>
+<span class="nv">$dbServer</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span><span class="p">;</span>
+<span class="nv">$dbName</span> <span class="o">=</span> <span class="s2">&quot;PHPLearn&quot;</span><span class="p">;</span>
+
+<span class="nv">$connection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mysqli</span><span class="p">(</span><span class="nv">$dbServer</span><span class="p">,</span> <span class="nv">$dbUserName</span><span class="p">,</span> <span class="nv">$dbPassword</span><span class="p">,</span> <span class="nv">$dbName</span><span class="p">);</span>
+<span class="c1">//optional parametters are port and socket number</span>
+<span class="c1">//print_r($connection);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">connect_errno</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">exit</span><span class="p">(</span><span class="s2">&quot;Database Connection Failed. Reason: &quot;</span><span class="o">.</span><span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">connect_errno</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="executin-a-query">
+<h2>Executin a Query<a class="headerlink" href="#executin-a-query" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Insert data into table from phpmyadmin-&gt; Insert</li>
+</ul>
+<div class="section" id="insert-update-or-delete">
+<h3>Insert, Update or DELETE<a class="headerlink" href="#insert-update-or-delete" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">//Connect.php</span>
+<span class="cp">&lt;?php</span>
+<span class="nv">$dbPassword</span> <span class="o">=</span> <span class="s2">&quot;eagle&quot;</span><span class="p">;</span>
+<span class="nv">$dbUserName</span> <span class="o">=</span> <span class="s2">&quot;kai&quot;</span><span class="p">;</span>
+<span class="nv">$dbServer</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span><span class="p">;</span>
+<span class="nv">$dbName</span> <span class="o">=</span> <span class="s2">&quot;PHPLearn&quot;</span><span class="p">;</span>
+
+<span class="nv">$connection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mysqli</span><span class="p">(</span><span class="nv">$dbServer</span><span class="p">,</span> <span class="nv">$dbUserName</span><span class="p">,</span> <span class="nv">$dbPassword</span><span class="p">,</span> <span class="nv">$dbName</span><span class="p">);</span>
+<span class="c1">//optional parametters are port and socket number</span>
+<span class="c1">//print_r($connection);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">connect_errno</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">exit</span><span class="p">(</span><span class="s2">&quot;Database Connection Failed. Reason: &quot;</span><span class="o">.</span><span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">connect_errno</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//$query = &quot;DELETE FROM Authors WHERE id = 4&quot;;</span>
+<span class="c1">//$query = &quot;UPDATE Authors SET pen_name = &#39;L. M. Montgomery&#39; WHERE id = 2&quot;;</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="s2">&quot;INSERT INTO Authors (first_name, last_name, pen_name) VALUES (&#39;Arthur&#39;, &#39;Doyle&#39;, &#39;Ignatius&#39;)&quot;</span><span class="p">;</span>
+<span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
+<span class="c1">//to grab newly created auto incremented id use:</span>
+<span class="k">echo</span> <span class="s2">&quot;Newly Created Author Id: &quot;</span><span class="o">.</span><span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">insert_id</span><span class="p">;</span>
+<span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To grab the newly created id it must be primary key &amp; auto increment</p>
+</div>
+</div>
+<div class="section" id="select-statement">
+<h3>Select Statement<a class="headerlink" href="#select-statement" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$dbPassword</span> <span class="o">=</span> <span class="s2">&quot;eagle&quot;</span><span class="p">;</span>
+<span class="nv">$dbUserName</span> <span class="o">=</span> <span class="s2">&quot;kai&quot;</span><span class="p">;</span>
+<span class="nv">$dbServer</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span><span class="p">;</span>
+<span class="nv">$dbName</span> <span class="o">=</span> <span class="s2">&quot;PHPLearn&quot;</span><span class="p">;</span>
+<span class="nv">$connection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mysqli</span><span class="p">(</span><span class="nv">$dbServer</span><span class="p">,</span> <span class="nv">$dbUserName</span><span class="p">,</span> <span class="nv">$dbPassword</span><span class="p">,</span> <span class="nv">$dbName</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">connect_errno</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">exit</span><span class="p">(</span><span class="s2">&quot;Database Connection Failed. Reason: &quot;</span><span class="o">.</span><span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">connect_errno</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="s2">&quot;SELECT first_name, last_name, pen_name FROM Authors ORDER BY first_name&quot;</span><span class="p">;</span>
+<span class="nv">$resObj</span> <span class="o">=</span> <span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$resObj</span><span class="o">-&gt;</span><span class="na">num_rows</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">while</span><span class="p">(</span><span class="nv">$singleRowFromQuery</span> <span class="o">=</span> <span class="nv">$resObj</span><span class="o">-&gt;</span><span class="na">fetch_assoc</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">//print_r($singleRowFromQuery);</span>
+        <span class="k">echo</span> <span class="s2">&quot;Author: &quot;</span><span class="o">.</span><span class="nv">$singleRowFromQuery</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="nx">PHP_EOL</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nv">$resObj</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
+<span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="prepared-statement">
+<h2>Prepared Statement<a class="headerlink" href="#prepared-statement" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$dbPassword</span> <span class="o">=</span> <span class="s2">&quot;eagle&quot;</span><span class="p">;</span>
+<span class="nv">$dbUserName</span> <span class="o">=</span> <span class="s2">&quot;kai&quot;</span><span class="p">;</span>
+<span class="nv">$dbServer</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span><span class="p">;</span>
+<span class="nv">$dbName</span> <span class="o">=</span> <span class="s2">&quot;PHPLearn&quot;</span><span class="p">;</span>
+<span class="nv">$connection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mysqli</span><span class="p">(</span><span class="nv">$dbServer</span><span class="p">,</span> <span class="nv">$dbUserName</span><span class="p">,</span> <span class="nv">$dbPassword</span><span class="p">,</span> <span class="nv">$dbName</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">connect_errno</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">die</span><span class="p">(</span><span class="s2">&quot;Database Connection Failed. Reason: &quot;</span><span class="o">.</span><span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">connect_errno</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nv">$tempFirstName</span> <span class="o">=</span> <span class="s1">&#39;Lucy&#39;</span><span class="p">;</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="s2">&quot;SELECT first_name, last_name, pen_name FROM Authors WHERE first_name = ?&quot;</span><span class="p">;</span>
+<span class="nv">$statementObj</span> <span class="o">=</span> <span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
+
+<span class="nv">$statementObj</span><span class="o">-&gt;</span><span class="na">bind_param</span><span class="p">(</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="nv">$tempFirstName</span><span class="p">);</span>
+<span class="nv">$statementObj</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+
+<span class="nv">$statementObj</span><span class="o">-&gt;</span><span class="na">bind_result</span><span class="p">(</span><span class="nv">$firstName</span><span class="p">,</span> <span class="nv">$lastName</span><span class="p">,</span> <span class="nv">$penName</span><span class="p">);</span>
+<span class="nv">$statementObj</span><span class="o">-&gt;</span><span class="na">store_result</span><span class="p">();</span>
+
+
+<span class="k">if</span><span class="p">(</span><span class="nv">$statementObj</span><span class="o">-&gt;</span><span class="na">num_rows</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">while</span><span class="p">(</span><span class="nv">$statementObj</span><span class="o">-&gt;</span><span class="na">fetch</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$firstName</span><span class="o">.</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="nv">$lastName</span><span class="o">.</span><span class="s2">&quot; (&quot;</span><span class="o">.</span><span class="nv">$penName</span><span class="o">.</span><span class="s2">&quot;)&quot;</span><span class="o">.</span><span class="nx">PHP_EOL</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nv">$statementObj</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
+<span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>Prepared Statements allow for outside user input to safely be used inside a query</li>
+<li>Help to prefent SQL injection attacks</li>
+<li>Prepare Statement uses $connection-&gt;prepare instead of $connection-&gt;query</li>
+<li>bind_param will take the place of place holder ? in the select statement</li>
+<li>bind_param parametters are (type string, value to the query) where value will to to place holder and must be passes by reference, therfore mmust be a variable</li>
+<li>bind_param(&#8220;sdi&#8221;, $stringVar, $floatVar, $intVar) means the first bind parameter is a string, the second is an is decimle and the third is an integer</li>
+</ul>
+</div>
+</div>
+<div class="section" id="pdo-example">
+<h2>PDO Example<a class="headerlink" href="#pdo-example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$dbPassword</span> <span class="o">=</span> <span class="s2">&quot;eagle&quot;</span><span class="p">;</span>
+<span class="nv">$dbUserName</span> <span class="o">=</span> <span class="s2">&quot;kai&quot;</span><span class="p">;</span>
+<span class="nv">$dbServer</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span><span class="p">;</span>
+<span class="nv">$dbName</span> <span class="o">=</span> <span class="s2">&quot;PHPLearn&quot;</span><span class="p">;</span>
+<span class="nv">$connection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PDO</span><span class="p">(</span><span class="s1">&#39;mysql:host=&#39;</span><span class="o">.</span><span class="nv">$dbServer</span><span class="o">.</span><span class="s1">&#39;;dbname=&#39;</span><span class="o">.</span><span class="nv">$dbName</span><span class="p">,</span> <span class="nv">$dbUserName</span><span class="p">,</span> <span class="nv">$dbPassword</span><span class="p">);</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="s2">&quot;SELECT first_name, last_name, pen_name FROM Authors ORDER BY first_name&quot;</span><span class="p">;</span>
+<span class="nv">$resultObj</span> <span class="o">=</span> <span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nv">$resultObj</span><span class="o">-&gt;</span><span class="na">rowCount</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$resultObj</span> <span class="k">as</span> <span class="nv">$singleRowFromQuery</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;Author: &quot;</span> <span class="o">.</span><span class="nv">$singleRowFromQuery</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="nx">PHP_EOL</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nv">$resultObj</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
+<span class="nv">$connection</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="54%" />
+<col width="46%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">MySQLi</th>
+<th class="head">PDO</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>$connection = new SQLite(...</td>
+<td>$connection = new PDO(..</td>
+</tr>
+<tr class="row-odd"><td>num_rows</td>
+<td>rowCount</td>
+</tr>
+<tr class="row-even"><td>while loop</td>
+<td>foreach</td>
+</tr>
+<tr class="row-odd"><td>$connection-&gt;close()</td>
+<td>$connection = null</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -173,8 +447,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="WebProgramming.html" class="btn btn-neutral float-right" title="Web Programming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="WebProgramming.html" class="btn btn-neutral" title="Web Programming" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="ControlStructure.html" class="btn btn-neutral" title="Control Structure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
