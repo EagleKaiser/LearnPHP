@@ -202,10 +202,10 @@
 <span class="p">{</span>
     <span class="k">public</span> <span class="nv">$firstName</span> <span class="o">=</span> <span class="s2">&quot;Samel&quot;</span><span class="p">;</span>
     <span class="k">public</span> <span class="nv">$lastName</span> <span class="o">=</span> <span class="s2">&quot;Clemens&quot;</span><span class="p">;</span>
-    <span class="k">public</span> <span class="nv">$yearBorn</span> <span class="o">=</span> <span class="s2">&quot;1988;</span>
-<span class="s2">}</span>
-<span class="si">$myObject</span><span class="s2"> = new Person();</span>
-<span class="s2">?&gt;</span>
+    <span class="k">public</span> <span class="nv">$yearBorn</span> <span class="o">=</span> <span class="s2">&quot;1988&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nv">$myObject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">();</span>
+<span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
 </div>
 </div>
@@ -548,9 +548,9 @@
 <span class="k">include</span> <span class="s1">&#39;Person.php&#39;</span><span class="p">;</span>
 <span class="k">include_once</span> <span class="s1">&#39;Authors.php&#39;</span><span class="p">;</span>
 <span class="k">require</span> <span class="s1">&#39;RandomClass.php&#39;</span><span class="p">;</span>
-<span class="nv">$newAuthor</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Author</span><span class="p">(</span><span class="s2">&quot;sam, &quot;</span><span class="nx">clem</span><span class="s2">&quot;, 1889);</span>
-<span class="s2">echo </span><span class="si">$newAuthor-&gt;getCompleteName</span><span class="s2">();</span>
-<span class="s2">?&gt;</span>
+<span class="nv">$newAuthor</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Author</span><span class="p">(</span><span class="s2">&quot;sam&quot;</span><span class="p">,</span> <span class="s2">&quot;clem&quot;</span><span class="p">,</span> <span class="mi">1889</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$newAuthor</span><span class="o">-&gt;</span><span class="na">getCompleteName</span><span class="p">();</span>
+<span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
 </div>
 <div class="admonition note">

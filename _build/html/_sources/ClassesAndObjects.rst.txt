@@ -33,7 +33,7 @@ Create Properties
     {
         public $firstName = "Samel";
         public $lastName = "Clemens";
-        public $yearBorn = "1988;
+        public $yearBorn = "1988";
     }
     $myObject = new Person();
     ?>
@@ -384,7 +384,7 @@ Include and Require
     include 'Person.php';
     include_once 'Authors.php';
     require 'RandomClass.php';
-    $newAuthor = new Author("sam, "clem", 1889);
+    $newAuthor = new Author("sam", "clem", 1889);
     echo $newAuthor->getCompleteName();
     ?>
 
