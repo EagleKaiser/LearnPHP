@@ -95,7 +95,25 @@
 <li class="toctree-l1"><a class="reference internal" href="ClassesAndObjects.html">Classess &amp; Objects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ControlStructure.html">Control Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Databases.html">Databases</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Web Programming</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Web Programming</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setup-web-site-location-in-linux">Setup web site location in Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup-web-site-location-in-windows">Setup web site location in windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-project">Sample project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#index-php">index.php</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#final-php">final.php</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#styles-css">styles.css</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#connect-website-to-database">Connect Website to database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-dropdown-list">Create dropdown List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get">$_GET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#post">$_POST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#form-validation">Form Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#session-start">session_start()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#session">$_SESSION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#session-desroy">session_desroy()</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -161,6 +179,460 @@
             
   <div class="section" id="web-programming">
 <h1>Web Programming<a class="headerlink" href="#web-programming" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="setup-web-site-location-in-linux">
+<h2>Setup web site location in Linux<a class="headerlink" href="#setup-web-site-location-in-linux" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Linux store web applications in /var/www/html</li>
+<li>There are two options one is to move the files to the location /var/www/html or we can create a symLink in the same directory that point to any file location</li>
+<li>To create symLink use the following command</li>
+</ul>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo ln -s /home/projectName/web/ /var/www/html/symLinkName</span>
+<span class="go">//ln-&gt; link, -s symbolic, project location, symLink location</span>
+<span class="go">//symLinkName will be used with localhost/symLink</span>
+<span class="go">//to view symLink of a folder type the following:</span>
+<span class="go">ls -al /var/www/hml/</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Customize netbeans to run project as local web site from Customize-&gt;run configuration</li>
+<li>And change project url to be <a class="reference external" href="http://localhost/symLinkName">http://localhost/symLinkName</a></li>
+</ul>
+</div>
+<div class="section" id="setup-web-site-location-in-windows">
+<h2>Setup web site location in windows<a class="headerlink" href="#setup-web-site-location-in-windows" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>XAMPP store web applications in c:xampphtdocs</li>
+<li>Customize netbeans to run project as local web site from Customize-&gt;run configuration</li>
+<li>In windows IIS is running in port 80 so from XAMPP menu go to config and search for the number 80 and change it to 81</li>
+<li>Customize netbeans project url to <a class="reference external" href="http://localhost:81/PHPFundamentals/">http://localhost:81/PHPFundamentals/</a></li>
+</ul>
+</div>
+<div class="section" id="sample-project">
+<h2>Sample project<a class="headerlink" href="#sample-project" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Sample project include three files: index.php, final.php, asset(folder)-&gt;styles.css with one picture</li>
+</ul>
+<div class="section" id="index-php">
+<h3>index.php<a class="headerlink" href="#index-php" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>PHP Fundamentals<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;assets/styles.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;Header&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;assets/Dickens_Gurney_head.jpg&quot;</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>
+                Join Our Literature Mailing List
+            <span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;Body&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;get&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;final.php&quot;</span> <span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Favorite Author:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;author&quot;</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;multiple&quot;</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Favorite Century:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                    17th Century <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;century[]&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;17th&quot;</span><span class="p">&gt;</span>
+                    18th Century <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;century[]&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;18th&quot;</span><span class="p">&gt;</span>
+                    19th Century <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;century[]&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;19th&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Comments:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;comments&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Name:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="p">/&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>E-mail Address:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="p">/&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span>  <span class="na">class</span><span class="o">=</span><span class="s">&quot;multiple&quot;</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Receive Newsletter:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                    Yes <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;newsletter&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;</span>
+                    No <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;newsletter&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;yes&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;multiple&quot;</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span><span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Join Mailing List&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">add [] to checkbox names to accept multible input values or it will take the first only</p>
+</div>
+</div>
+<div class="section" id="final-php">
+<h3>final.php<a class="headerlink" href="#final-php" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>PHP Fundamentals<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;assets/styles.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;Header&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;assets/Dickens_Gurney_head.jpg&quot;</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>
+                Mailing List Information
+            <span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;Body&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Favorite Author:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Favorite Century:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Comments:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Name:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>E-mail Address:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Receive Newsletter:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="styles-css">
+<h3>styles.css<a class="headerlink" href="#styles-css" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="p">{</span> <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span> <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span> <span class="k">font-family</span><span class="p">:</span> <span class="kc">sans-serif</span><span class="p">;</span>  <span class="k">font-size</span><span class="p">:</span> <span class="mi">18</span><span class="kt">px</span><span class="p">;</span>  <span class="k">color</span><span class="p">:</span> <span class="mh">#f9f9f9</span><span class="p">;</span> <span class="k">background</span><span class="p">:</span> <span class="mh">#888</span><span class="p">;</span> <span class="kp">-webkit-</span><span class="k">box-sizing</span><span class="p">:</span> <span class="kc">border-box</span><span class="p">;</span>    <span class="kp">-moz-</span><span class="k">box-sizing</span><span class="p">:</span> <span class="kc">border-box</span><span class="p">;</span> <span class="k">box-sizing</span><span class="p">:</span> <span class="kc">border-box</span><span class="p">;}</span>
+<span class="nt">h2</span> <span class="p">{</span> <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span> <span class="k">font-size</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>  <span class="k">padding-top</span><span class="p">:</span> <span class="mi">50</span><span class="kt">px</span><span class="p">;</span>  <span class="p">}</span>
+<span class="nt">body</span> <span class="p">{</span> <span class="k">padding-top</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">div</span> <span class="p">{</span> <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">20</span><span class="kt">px</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">label</span> <span class="p">{</span> <span class="k">float</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span> <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span> <span class="k">width</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span> <span class="k">text-align</span><span class="p">:</span> <span class="kc">right</span><span class="p">;</span> <span class="k">padding-right</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">input</span><span class="o">,</span> <span class="nt">textarea</span><span class="o">,</span> <span class="nt">select</span> <span class="p">{</span> <span class="k">width</span><span class="p">:</span> <span class="mi">400</span><span class="kt">px</span><span class="p">;</span> <span class="k">border</span><span class="p">:</span> <span class="kc">solid</span> <span class="mi">3</span><span class="kt">px</span> <span class="mh">#555</span><span class="p">;</span> <span class="k">padding</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span> <span class="k">background</span><span class="p">:</span> <span class="mh">#F9F9F9</span><span class="p">;</span> <span class="k">color</span><span class="p">:</span> <span class="mh">#555</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">submit</span><span class="o">]</span> <span class="p">{</span> <span class="k">background</span><span class="p">:</span> <span class="mh">#555</span><span class="p">;</span> <span class="k">border</span><span class="p">:</span> <span class="kc">solid</span> <span class="mi">5</span><span class="kt">px</span> <span class="mh">#333</span><span class="p">;</span> <span class="k">color</span><span class="p">:</span> <span class="mh">#F9F9F9</span><span class="p">;</span> <span class="k">padding</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>  <span class="p">}</span>
+<span class="nt">img</span> <span class="p">{</span> <span class="k">height</span><span class="p">:</span> <span class="mi">150</span><span class="kt">px</span><span class="p">;</span> <span class="k">float</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="p">#</span><span class="nn">Body</span> <span class="p">{</span> <span class="k">width</span><span class="p">:</span> <span class="mi">700</span><span class="kt">px</span><span class="p">;</span> <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="kc">auto</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">#</span><span class="nn">Header</span> <span class="p">{</span> <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span> <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">20</span><span class="kt">px</span> <span class="mi">0</span><span class="p">;</span> <span class="k">width</span><span class="p">:</span> <span class="mi">500</span><span class="kt">px</span><span class="p">;</span> <span class="k">overflow</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;</span> <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="kc">auto</span><span class="p">;</span>   <span class="p">}</span>
+<span class="p">.</span><span class="nc">multiple</span> <span class="nt">input</span> <span class="p">{</span> <span class="k">width</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span> <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">15</span><span class="kt">px</span> <span class="mi">0</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">.</span><span class="nc">multiple</span> <span class="p">{</span> <span class="k">font-size</span><span class="p">:</span> <span class="mi">14</span><span class="kt">px</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="connect-website-to-database">
+<h2>Connect Website to database<a class="headerlink" href="#connect-website-to-database" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Create a new php file in the asset folder called dbinfo.php</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$dbPassword</span> <span class="o">=</span> <span class="s2">&quot;eagle&quot;</span><span class="p">;</span>
+<span class="nv">$dbUserName</span> <span class="o">=</span> <span class="s2">&quot;kai&quot;</span><span class="p">;</span>
+<span class="nv">$dbServer</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span><span class="p">;</span>
+<span class="nv">$dbName</span> <span class="o">=</span> <span class="s2">&quot;PHPLearn&quot;</span><span class="p">;</span>
+
+<span class="nv">$connection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mysqli</span><span class="p">(</span><span class="nv">$dbServer</span><span class="p">,</span> <span class="nv">$dbUserName</span><span class="p">,</span> <span class="nv">$dbPassword</span><span class="p">,</span> <span class="nv">$dbName</span><span class="p">);</span>
+<span class="c1">//optional parametters are port and socket number</span>
+<span class="c1">//print_r($connection);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">connect_errno</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">exit</span><span class="p">(</span><span class="s2">&quot;Database Connection Failed. Reason: &quot;</span><span class="o">.</span><span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">connect_errno</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//don&#39;t use $connection-&gt;close();</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>At the beggining of index.php add the following code</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">require</span> <span class="s1">&#39;assets/dbinfo.php&#39;</span><span class="p">;</span>
+
+<span class="nv">$query</span> <span class="o">=</span> <span class="s2">&quot;SELECT id, first_name, last_name, pen_name FROM Authors ORDER BY first_name&quot;</span><span class="p">;</span>
+<span class="nv">$resultObj</span> <span class="o">=</span> <span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-dropdown-list">
+<h2>Create dropdown List<a class="headerlink" href="#create-dropdown-list" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>In index.php create an author dropdown List</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">&lt;select name=&quot;author&quot;&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span> <span class="k">while</span><span class="p">(</span><span class="nv">$row</span> <span class="o">=</span> <span class="nv">$resultObj</span><span class="o">-&gt;</span><span class="na">fetch_assoc</span><span class="p">())</span><span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">        &lt;option value=&quot;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&quot;&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x"> </span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;last_name&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&lt;/option&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span> <span class="k">endWhile</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">&lt;/select&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>id is inside the option tag and it will be displayed in the source code of the page</li>
+<li>Type a space between first_name and last_name</li>
+</ul>
+</div>
+</div>
+<div class="section" id="get">
+<h2>$_GET<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>get will diaplay the suppmeted values from the form in the url, which is insecure</li>
+<li>$_GET is a predefined variable that stores the get values in an associated array</li>
+<li>To get the valus of $_GET use the following code in the top of final.php</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">echo</span> <span class="s2">&quot;&lt;pre&gt;&quot;</span><span class="p">;</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">);</span> <span class="c1">//will print all element in the array</span>
+<span class="k">echo</span> <span class="s2">&quot;&lt;pre&gt;&quot;</span><span class="p">;</span>
+
+<span class="k">echo</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;author&#39;</span><span class="p">];</span> <span class="c1">//will print specific element from the array</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>To see the results open index and supmet values which will redirect to final.php</li>
+<li>echo &#8220;&lt;pre&gt;&#8221;; will format $_GET array values in a readable format</li>
+</ul>
+</div>
+</div>
+<div class="section" id="post">
+<h2>$_POST<a class="headerlink" href="#post" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>post will not diaplay the supmetted values from the form in the url, which is secure</li>
+<li>$_POST is a predefined variable that stores the post values in an associated array</li>
+<li>To get the valus of $_GET use the following code in the top of final.php</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">echo</span> <span class="s2">&quot;&lt;pre&gt;&quot;</span><span class="p">;</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">);</span> <span class="c1">// will print all element in the array</span>
+<span class="k">echo</span> <span class="s2">&quot;&lt;pre&gt;&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;author&#39;</span><span class="p">];</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>after examinning the result remove the previous code and change all get to post in the project</li>
+<li>Now modify final.php with the following code</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">&lt;div id=&quot;Body&quot;&gt;</span>
+<span class="x">        &lt;div&gt;</span>
+<span class="x">            &lt;label&gt;Favorite Author:&lt;/label&gt;</span>
+<span class="x">            &lt;span&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;author&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&lt;/span&gt;</span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">        &lt;div&gt;</span>
+<span class="x">            &lt;label&gt;Favorite Century:&lt;/label&gt;</span>
+<span class="x">            &lt;span&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;century&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&lt;/span&gt;</span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">        &lt;div&gt;</span>
+<span class="x">            &lt;label&gt;Comments:&lt;/label&gt;</span>
+<span class="x">            &lt;span&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;comments&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&lt;/span&gt;</span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">        &lt;div&gt;</span>
+<span class="x">            &lt;label&gt;Name:&lt;/label&gt;</span>
+<span class="x">            &lt;span&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&lt;/span&gt;</span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">        &lt;div&gt;</span>
+<span class="x">            &lt;label&gt;E-mail Address:&lt;/label&gt;</span>
+<span class="x">            &lt;span&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&lt;/span&gt;</span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">        &lt;div&gt;</span>
+<span class="x">            &lt;label&gt;Receive Newsletter:&lt;/label&gt;</span>
+<span class="x">            &lt;span&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;newsletter&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&lt;/span&gt;</span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">    &lt;/div&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="form-validation">
+<h2>Form Validation<a class="headerlink" href="#form-validation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>To create a validation to a form first change the action of the form to redirect to the same page (index-&gt;index)</li>
+<li>Add the following code to the top of the index file</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?</span> <span class="nx">php</span>
+<span class="k">if</span><span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// this will not allow the validation to be triggered when loading the page for the first time</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]))</span>
+    <span class="p">{</span>
+        <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;Location: final.php&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="nv">$emailError</span> <span class="o">=</span> <span class="s1">&#39;validation&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="simple">
+<li>Add &#8220;validation&#8221; as a class in the style.css file with the following code</li>
+</ul>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">validation</span> <span class="nt">label</span> <span class="p">{</span> <span class="k">color</span><span class="p">:</span> <span class="mh">#CC0000</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">.</span><span class="nc">validation</span> <span class="nt">input</span> <span class="p">{</span> <span class="k">border-color</span><span class="p">:</span> <span class="mh">#CC0000</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+<ul class="last simple">
+<li>Add this class to validate email input &lt;div class=&#8221;&lt;?=$emailError?&gt;&#8221;&gt; that should not be embty</li>
+<li>If posting to the same page $_POST will not take the values to a redirected page like final.php</li>
+<li>Implement session to take the values to a redirected page</li>
+</ul>
+</div>
+</div>
+<div class="section" id="session-start">
+<h2>session_start()<a class="headerlink" href="#session-start" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Add include.php file in the assets folder, this file will hold all required codes by other pages to prevent changing the same codes in multible pages</li>
+<li>Include the include.php file in the index.php and final.php pages by using the following code</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">include</span> <span class="s1">&#39;assets/include.php&#39;</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>Sessions will preserve data and allow it to be accessed through the enrire Website</li>
+<li>To start a session use the method session_start() in the pages that need to access the data</li>
+</ul>
+</div>
+</div>
+<div class="section" id="session">
+<h2>$_SESSION<a class="headerlink" href="#session" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>$_SESSION is an associated array that can be used to store data to be accessed throughout the web pages</li>
+<li>Modify index.php with the following code</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">if</span><span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]))</span>
+    <span class="p">{</span>
+            <span class="c1">//$_SESSION[&#39;formWasPosted&#39;] = &#39;yes&#39;;</span>
+            <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;formPostData&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">;</span> <span class="c1">//This will store $_POST values to $_SESSION</span>
+            <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;Location: final.php&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+                <span class="nv">$emailError</span> <span class="o">=</span> <span class="s1">&#39;validation&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>To see $_SESSION values add the following code to the top of final.php</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">include</span> <span class="s1">&#39;assets/include.php&#39;</span><span class="p">;</span>
+
+<span class="k">echo</span> <span class="s2">&quot;&lt;pre&gt;&quot;</span><span class="p">;</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">);</span>
+<span class="k">echo</span> <span class="s2">&quot;&lt;pre&gt;&quot;</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Now after supmetting the index form the values of $_SESSION will be displayed</li>
+<li>Modify final.php to have the following code</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">include</span> <span class="s1">&#39;assets/include.php&#39;</span><span class="p">;</span>
+
+<span class="nv">$postedData</span> <span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;formPostData&#39;</span><span class="p">];</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">&lt;!DOCTYPE html&gt;</span>
+<span class="x">&lt;html&gt;</span>
+<span class="x">    &lt;head&gt;</span>
+<span class="x">        &lt;title&gt;PHP Fundamentals&lt;/title&gt;</span>
+<span class="x">        &lt;link href=&quot;assets/styles.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;</span>
+<span class="x">    &lt;/head&gt;</span>
+<span class="x">    &lt;body&gt;</span>
+<span class="x">        &lt;div id=&quot;Header&quot;&gt;</span>
+<span class="x">            &lt;img src=&quot;assets/Dickens_Gurney_head.jpg&quot; border=&quot;0&quot; alt=&quot;&quot;&gt;</span>
+<span class="x">            &lt;h2&gt;</span>
+<span class="x">                Mailing List Information</span>
+<span class="x">            &lt;/h2&gt;</span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">        &lt;div id=&quot;Body&quot;&gt;</span>
+<span class="x">            &lt;div&gt;</span>
+<span class="x">                &lt;label&gt;Favorite Author:&lt;/label&gt;</span>
+<span class="x">                &lt;span&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$postedData</span><span class="p">[</span><span class="s1">&#39;author&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&lt;/span&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+<span class="x">            &lt;div&gt;</span>
+<span class="x">                &lt;label&gt;Favorite Century:&lt;/label&gt;</span>
+<span class="x">                &lt;span&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$postedData</span><span class="p">[</span><span class="s1">&#39;century&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&lt;/span&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+<span class="x">            &lt;div&gt;</span>
+<span class="x">                &lt;label&gt;Comments:&lt;/label&gt;</span>
+<span class="x">                &lt;span&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$postedData</span><span class="p">[</span><span class="s1">&#39;comments&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&lt;/span&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+<span class="x">            &lt;div&gt;</span>
+<span class="x">                &lt;label&gt;Name:&lt;/label&gt;</span>
+<span class="x">                &lt;span&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$postedData</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&lt;/span&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+<span class="x">            &lt;div&gt;</span>
+<span class="x">                &lt;label&gt;E-mail Address:&lt;/label&gt;</span>
+<span class="x">                &lt;span&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$postedData</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&lt;/span&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+<span class="x">            &lt;div&gt;</span>
+<span class="x">                &lt;label&gt;Receive Newsletter:&lt;/label&gt;</span>
+<span class="x">                &lt;span&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$postedData</span><span class="p">[</span><span class="s1">&#39;newsletter&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&lt;/span&gt;</span>
+<span class="x">            &lt;/div&gt;</span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">    &lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>The $postedData variable will hold the associated array $_SESSION which in turn holds $_POST data from the index form</li>
+<li>If session is not distroyed it will hold data even if returened to thu supmet page afterword</li>
+</ul>
+</div>
+<div class="section" id="session-desroy">
+<h2>session_desroy()<a class="headerlink" href="#session-desroy" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Modify final.php with the following code at the top</li>
+</ul>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">include</span> <span class="s1">&#39;assets/include.php&#39;</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;formPostData&#39;</span><span class="p">]))</span> <span class="c1">//If there is a session comming from index.php</span>
+<span class="p">{</span>
+    <span class="nv">$postedData</span> <span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;formPostData&#39;</span><span class="p">];</span>
+    <span class="nb">unset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;formPostData&#39;</span><span class="p">]);</span> <span class="c1">// this will empty the session after using it</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+    <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;Location: index.php&#39;</span><span class="p">);</span> <span class="c1">// If there is no session, will be redirected to index.php</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
 </div>
 
 

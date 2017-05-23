@@ -378,13 +378,13 @@
 <span class="nv">$authors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;charles&quot;</span><span class="p">,</span> <span class="s2">&quot;jane&quot;</span><span class="p">,</span> <span class="s2">&quot;William&quot;</span><span class="p">];</span>
 <span class="nv">$count</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$authors</span><span class="p">);</span>
 <span class="nv">$outcome</span> <span class="o">=</span> <span class="nv">$count</span> <span class="o">?</span> <span class="nv">$count</span> <span class="o">:</span> <span class="s2">&quot;Count unavailable&quot;</span><span class="p">;</span>
-<span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;;</span>
-<span class="si">$outcome</span><span class="s2"> = </span><span class="si">$count</span><span class="s2"> ?? &quot;</span><span class="nb">count</span> <span class="nx">unavailable</span><span class="s2">&quot;;</span>
-<span class="s2">echo </span><span class="si">$outcome</span><span class="s2">;</span>
-<span class="s2">//output:</span>
-<span class="s2">//3</span>
-<span class="s2">//3</span>
-<span class="s2">?&gt;</span>
+<span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="nv">$outcome</span> <span class="o">=</span> <span class="nv">$count</span> <span class="o">??</span> <span class="s2">&quot;count unavailable&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$outcome</span><span class="p">;</span>
+<span class="c1">//output:</span>
+<span class="c1">//3</span>
+<span class="c1">//3</span>
+<span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
 </div>
 <div class="admonition note">
