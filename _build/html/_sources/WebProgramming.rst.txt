@@ -7,6 +7,7 @@ Setup web site location in Linux
 * Linux store web applications in /var/www/html
 * There are two options one is to move the files to the location /var/www/html or we can create a symLink in the same directory that point to any file location
 * To create symLink use the following command
+
 .. code-block:: console
 
     sudo ln -s /home/projectName/web/ /var/www/html/symLinkName
@@ -185,6 +186,7 @@ Connect Website to database
     ?>
 
 * At the beggining of index.php add the following code
+
 .. code-block:: php
 
     <?php
@@ -304,9 +306,10 @@ Form Validation
     }
     ?>
 
-.. note:: 
+.. note::
 
     * Add "validation" as a class in the style.css file with the following code
+    
     .. code-block:: css
     
         .validation label { color: #CC0000; }
@@ -321,6 +324,7 @@ session_start()
 
 * Add include.php file in the assets folder, this file will hold all required codes by other pages to prevent changing the same codes in multible pages
 * Include the include.php file in the index.php and final.php pages by using the following code
+
 .. code-block:: php
 
     <?php

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Classess &amp; Objects &mdash; LearnPHP  documentation</title>
+  <title>Classess &amp; Objects &mdash; New Sphinx  documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="LearnPHP  documentation" href="index.html"/>
+    <link rel="top" title="New Sphinx  documentation" href="index.html"/>
         <link rel="next" title="Control Structure" href="ControlStructure.html"/>
         <link rel="prev" title="Arrays" href="Arrays.html"/> 
 
@@ -56,7 +56,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> LearnPHP
+            <a href="index.html" class="icon icon-home"> New Sphinx
           
 
           
@@ -124,7 +124,7 @@
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">LearnPHP</a>
+          <a href="index.html">New Sphinx</a>
         
       </nav>
 
@@ -230,7 +230,7 @@
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">we don&#8217;t use $ to access the properties values</p>
+<p class="last">we don’t use $ to access the properties values</p>
 </div>
 </div>
 <div class="section" id="creating-constans">
@@ -409,49 +409,49 @@
 <span class="sd">/**</span>
 <span class="sd"> * Define MyClass</span>
 <span class="sd"> */</span>
-<span class="k">class</span> <span class="nc">MyClass</span>
+<span class="nx">class MyClass</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="nv">$public </span><span class="o">=</span> <span class="s1">&#39;Public&#39;</span><span class="p">;</span>
-    <span class="k">protected</span> <span class="nv">$protected </span><span class="o">=</span> <span class="s1">&#39;Protected&#39;</span><span class="p">;</span>
-    <span class="k">private</span> <span class="nv">$private </span><span class="o">=</span> <span class="s1">&#39;Private&#39;</span><span class="p">;</span>
+<span class="nx">    public </span><span class="nv">$public </span><span class="o">=</span><span class="nx"> </span><span class="s1">&#39;Public&#39;</span><span class="p">;</span>
+<span class="nx">    protected </span><span class="nv">$protected </span><span class="o">=</span><span class="nx"> </span><span class="s1">&#39;Protected&#39;</span><span class="p">;</span>
+<span class="nx">    private </span><span class="nv">$private </span><span class="o">=</span><span class="nx"> </span><span class="s1">&#39;Private&#39;</span><span class="p">;</span>
 
-    <span class="k">function</span> <span class="nf">printHello</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">public</span><span class="p">;</span>
-        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">protected</span><span class="p">;</span>
-        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">private</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="nx">    function printHello</span><span class="p">()</span>
+<span class="nx">    </span><span class="p">{</span>
+<span class="nx">        echo </span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">public</span><span class="p">;</span>
+<span class="nx">        echo </span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">protected</span><span class="p">;</span>
+<span class="nx">        echo </span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">private</span><span class="p">;</span>
+<span class="nx">    </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nv">$obj </span><span class="o">=</span> <span class="k">new</span> <span class="nx">MyClass</span><span class="p">();</span>
-<span class="k">echo</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">public</span><span class="p">;</span> <span class="c1">// Works</span>
-<span class="k">echo</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">protected</span><span class="p">;</span> <span class="c1">// Fatal Error</span>
-<span class="k">echo</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">private</span><span class="p">;</span> <span class="c1">// Fatal Error</span>
-<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">printHello</span><span class="p">();</span> <span class="c1">// Shows Public, Protected and Private</span>
+<span class="nv">$obj </span><span class="o">=</span><span class="nx"> new MyClass</span><span class="p">();</span>
+<span class="k">echo</span><span class="nx"> </span><span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">public</span><span class="p">;</span><span class="nx"> </span><span class="c1">// Works</span>
+<span class="k">echo</span><span class="nx"> </span><span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">protected</span><span class="p">;</span><span class="nx"> </span><span class="c1">// Fatal Error</span>
+<span class="k">echo</span><span class="nx"> </span><span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">private</span><span class="p">;</span><span class="nx"> </span><span class="c1">// Fatal Error</span>
+<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">printHello</span><span class="p">();</span><span class="nx"> </span><span class="c1">// Shows Public, Protected and Private</span>
 
 
 <span class="sd">/**</span>
 <span class="sd"> * Define MyClass2</span>
 <span class="sd"> */</span>
-<span class="k">class</span> <span class="nc">MyClass2 extends MyClass</span>
+<span class="nx">class MyClass2 extends MyClass</span>
 <span class="p">{</span>
-    <span class="c1">// We can redeclare the public and protected properties, but not private</span>
-    <span class="k">public</span> <span class="nv">$public </span><span class="o">=</span> <span class="s1">&#39;Public2&#39;</span><span class="p">;</span>
-    <span class="k">protected</span> <span class="nv">$protected </span><span class="o">=</span> <span class="s1">&#39;Protected2&#39;</span><span class="p">;</span>
+<span class="nx">    </span><span class="c1">// We can redeclare the public and protected properties, but not private</span>
+<span class="nx">    public </span><span class="nv">$public </span><span class="o">=</span><span class="nx"> </span><span class="s1">&#39;Public2&#39;</span><span class="p">;</span>
+<span class="nx">    protected </span><span class="nv">$protected </span><span class="o">=</span><span class="nx"> </span><span class="s1">&#39;Protected2&#39;</span><span class="p">;</span>
 
-    <span class="k">function</span> <span class="nf">printHello</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">public</span><span class="p">;</span>
-        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">protected</span><span class="p">;</span>
-        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">private</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="nx">    function printHello</span><span class="p">()</span>
+<span class="nx">    </span><span class="p">{</span>
+<span class="nx">        echo </span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">public</span><span class="p">;</span>
+<span class="nx">        echo </span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">protected</span><span class="p">;</span>
+<span class="nx">        echo </span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">private</span><span class="p">;</span>
+<span class="nx">    </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nv">$obj2 </span><span class="o">=</span> <span class="k">new</span> <span class="nx">MyClass2</span><span class="p">();</span>
-<span class="k">echo</span> <span class="nv">$obj2</span><span class="o">-&gt;</span><span class="na">public</span><span class="p">;</span> <span class="c1">// Works</span>
-<span class="k">echo</span> <span class="nv">$obj2</span><span class="o">-&gt;</span><span class="na">protected</span><span class="p">;</span> <span class="c1">// Fatal Error</span>
-<span class="k">echo</span> <span class="nv">$obj2</span><span class="o">-&gt;</span><span class="na">private</span><span class="p">;</span> <span class="c1">// Undefined</span>
-<span class="nv">$obj2</span><span class="o">-&gt;</span><span class="na">printHello</span><span class="p">();</span> <span class="c1">// Shows Public2, Protected2, Undefined</span>
+<span class="nv">$obj2 </span><span class="o">=</span><span class="nx"> new MyClass2</span><span class="p">();</span>
+<span class="k">echo</span><span class="nx"> </span><span class="nv">$obj2</span><span class="o">-&gt;</span><span class="na">public</span><span class="p">;</span><span class="nx"> </span><span class="c1">// Works</span>
+<span class="k">echo</span><span class="nx"> </span><span class="nv">$obj2</span><span class="o">-&gt;</span><span class="na">protected</span><span class="p">;</span><span class="nx"> </span><span class="c1">// Fatal Error</span>
+<span class="k">echo</span><span class="nx"> </span><span class="nv">$obj2</span><span class="o">-&gt;</span><span class="na">private</span><span class="p">;</span><span class="nx"> </span><span class="c1">// Undefined</span>
+<span class="nv">$obj2</span><span class="o">-&gt;</span><span class="na">printHello</span><span class="p">();</span><span class="nx"> </span><span class="c1">// Shows Public2, Protected2, Undefined</span>
 
 <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
@@ -584,7 +584,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, eagle.
+        &copy; Copyright 2017, Eagle.
 
     </p>
   </div>
